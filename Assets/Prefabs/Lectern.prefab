@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2458421783192543411}
   - component: {fileID: 8818649749297057060}
   - component: {fileID: 1959196944155123536}
+  - component: {fileID: 1439423219169053481}
   m_Layer: 0
   m_Name: Lectern
   m_TagString: Untagged
@@ -92,6 +93,20 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1439423219169053481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263715014580226065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa20d89f06c092b48a15cf8b18b6f1e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lectern
+  artistDescriptionText: {fileID: 513835328594132783}
+  artistNameText: {fileID: 568280055041585031}
 --- !u!1 &6002829549179967350
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@
 /[Aa]ssets/Samples
 
 #API Keys
-/[Aa]ssets/Code/GeminiAPI/GeminiKeys*
+/[Aa]ssets/Code/AIGenerators/APIKeys*
 
 # Visual Studio cache directory
 .vs/

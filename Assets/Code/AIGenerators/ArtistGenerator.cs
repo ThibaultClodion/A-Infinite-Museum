@@ -6,26 +6,18 @@ using System.Text.Json.Serialization;
 using System.Collections.Generic;
 using System.Text.Json;
 
-
-public class GeminiAPI : MonoBehaviour
+public class ArtistGenerator : MonoBehaviour
 {
-    private Client client;
+    private Client client = new Client(apiKey: APIKeys.GEMINI_API_KEY);
 
-    private async void Start()
+    public async Task GenerateAnArtist()
     {
-        client = new Client(apiKey: GeminiKeys.API_KEY);
-
-        /*var models = await client.Models.ListAsync();
-        await foreach (var m in models)
+        if(client == null)
         {
-            Debug.Log($"Modèle disponible : {m.Name} - Supporte GenerateContent: {m.DisplayName}");
-        }*/
+            Debug.LogError("Client is not initialized. Please check your API key.");
+            return;
+        }
 
-        string test = await GenerateArtist();
-    }
-
-    public async Task<string> GenerateArtist()
-    {
         var config = new GenerateContentConfig();
         config.ResponseMimeType = "application/json";
         config.Seed = Random.Range(1, int.MaxValue);
@@ -44,14 +36,13 @@ public class GeminiAPI : MonoBehaviour
         };
 
         var response = await client.Models.GenerateContentAsync(
-            model: "gemini-2.0-flash-lite",
-            contents: "Generate a fictionnal painter name an description that I could then reuse to generate 6 paintings in Gemini Nano Banana",
+            model: "gemini-3-flash-preview",
+            contents: "Generate a fictionnal painter name an description.",
             config
         );
 
-        string jsonResponse = response.Candidates[0].Content.Parts[0].Text;
-
         // Parse the JSON response
+        string jsonResponse = response.Candidates[0].Content.Parts[0].Text;
         ArtistModel artist = JsonSerializer.Deserialize<ArtistModel>(jsonResponse);
 
         string name = artist.Name;
@@ -59,8 +50,6 @@ public class GeminiAPI : MonoBehaviour
 
         Debug.Log($"Artist Name: {name}");
         Debug.Log($"Artist Description: {description}");
-
-        return jsonResponse;
     }
 }
 

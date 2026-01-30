@@ -2454,6 +2454,7 @@ MonoBehaviour:
   - {fileID: 3743080703487661040}
   - {fileID: 4825616025984864479}
   - {fileID: 708899008342910820}
+  lectern: {fileID: 8911854911481828456}
 --- !u!1 &7079726937245280756
 GameObject:
   m_ObjectHideFlags: 0
@@ -4043,6 +4044,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2458421783192543411, guid: b79f5cbacb5956b4cbc3692c8b4c5e77, type: 3}
   m_PrefabInstance: {fileID: 7517808610608717633}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8911854911481828456 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1439423219169053481, guid: b79f5cbacb5956b4cbc3692c8b4c5e77, type: 3}
+  m_PrefabInstance: {fileID: 7517808610608717633}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa20d89f06c092b48a15cf8b18b6f1e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lectern
 --- !u!1001 &7915402768406987541
 PrefabInstance:
   m_ObjectHideFlags: 0

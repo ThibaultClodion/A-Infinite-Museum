@@ -9,6 +9,7 @@ public class Painting : MonoBehaviour
     [SerializeField] private Renderer frameRenderer;
 
     [Header("Informations")]
+    [HideInInspector] public string promptUsed;
     [SerializeField] private Renderer informationFrameRenderer;
     [SerializeField] private TextMeshProUGUI informationText;
     [SerializeField] private TextMeshProUGUI artistNameText;
@@ -28,6 +29,8 @@ public class Painting : MonoBehaviour
 
     public void ChangeInformation(Color frameColor, string promptUsed, string artistName)
     {
+        this.promptUsed = promptUsed;
+
         informationFrameRenderer.material.color = frameColor;
         informationText.text = promptUsed;
         artistNameText.text = artistName;

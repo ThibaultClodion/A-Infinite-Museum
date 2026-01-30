@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomDecoration : MonoBehaviour
+public class Room : MonoBehaviour
 {
     [Header("Room Fondations")]
     [SerializeField] private List<Renderer> wallsRenderer;
@@ -10,6 +10,9 @@ public class RoomDecoration : MonoBehaviour
 
     [Header("Paintings")]
     [SerializeField] private List<Painting> paintings;
+
+    [Header("Lectern")]
+    [SerializeField] private Lectern lectern;
 
     void Start()
     {
