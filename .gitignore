@@ -28,6 +28,9 @@
 # Samples from Meta SDK
 /[Aa]ssets/Samples
 
+#API Keys
+/[Aa]ssets/Code/GeminiAPI/GeminiKeys*
+
 # Visual Studio cache directory
 .vs/
 
