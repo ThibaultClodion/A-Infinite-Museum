@@ -42,8 +42,6 @@ MonoBehaviour:
   - description: A Spanish man in his thirties wearing a red T-shirt, shorts, and
       tattoos.
     meshPrefab: {fileID: 919132149155446097, guid: 13ebc045568d14a42a63a14c0cff8566, type: 3}
-  - description: A white woman with blue hair in her thirties wearing a space suit.
-    meshPrefab: {fileID: 919132149155446097, guid: cc6ecc0eda567ab4099a8037041d5809, type: 3}
   - description: A white woman around 35 years old with blonde hair wearing a yellow
       sweater and denim shorts.
     meshPrefab: {fileID: 919132149155446097, guid: dce709b644a868c4c87821751eacfc90, type: 3}

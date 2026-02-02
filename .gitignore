@@ -33,7 +33,7 @@
 /[Aa]ssets/GeneratedArtists
 
 #API Keys
-/[Aa]ssets/Code/AIGenerators/APIKeys*
+/[Aa]ssets/Code/APIKeys*
 
 # Visual Studio cache directory
 .vs/

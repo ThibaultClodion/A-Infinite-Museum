@@ -25,8 +25,6 @@ public class ArtistGenerator : MonoBehaviour
             return;
         }
 
-        Debug.Log("Start artist creation (the process can take up to 30 seconds)");
-
         // Configure content generation parameters to get a random artist
         var config = new GenerateContentConfig();
         config.ResponseMimeType = "application/json";
@@ -135,7 +133,8 @@ public class ArtistGenerator : MonoBehaviour
         var response = await client.Models.GenerateContentAsync(
             model: "gemini-3-flash-preview",
             contents: $"Generate a fictional painter name and description. " +
-            $"IMPORTANT: Choose randomly and vary your selection from these mesh descriptions: {string.Join(", ", meshDescriptions)}. Do not favor any particular option. Use it to fulfill the other parameters with creative variety.",
+            $"You MUST use this specific mesh type for the artist: '{meshDescriptions[Random.Range(0, meshDescriptions.Count)]}'. " +
+            $"Create the artist's personality, style, and all other parameters to match this mesh choice creatively.",
             config
         );
 
