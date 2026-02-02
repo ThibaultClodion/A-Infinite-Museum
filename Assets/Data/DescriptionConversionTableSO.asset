@@ -66,3 +66,47 @@ MonoBehaviour:
   - description: A white woman in her thirties with short hair dressed in a superhero
       costume.
     meshPrefab: {fileID: 919132149155446097, guid: 53927cd2157220c4cb527a5e26156291, type: 3}
+  descriptionToAnimation:
+  - description: 'A man who is idle and moves little. '
+    animationClip: {fileID: -203655887218126122, guid: ccc97f1926a7dd445a478770b452eb01, type: 3}
+  - description: A woman standing idle, breathing quite heavily.
+    animationClip: {fileID: -203655887218126122, guid: 5d4f37176fcd7f24fbe0ec30033c2887, type: 3}
+  - description: A woman standing idle, breathing moderately
+    animationClip: {fileID: -203655887218126122, guid: a23e7489feadab340ab8335946f0f60f, type: 3}
+  - description: A man standing idle, swaying and breathing heavily
+    animationClip: {fileID: -203655887218126122, guid: e087737830802014092642fe8a019f25, type: 3}
+  - description: An idle kneeling with weak breathing
+    animationClip: {fileID: -203655887218126122, guid: f27b9003a125c894baade22e27e43a1a, type: 3}
+  - description: A woman standing idle, breathing weakly.
+    animationClip: {fileID: -203655887218126122, guid: 134eae7d46476594989b1921520646dc, type: 3}
+  - description: A man standing idle who appears confident.
+    animationClip: {fileID: -203655887218126122, guid: 13266481e99df374fb6e15148e9edbd8, type: 3}
+  - description: 'A man idling with a slightly hunched back who breathes moderately. '
+    animationClip: {fileID: -203655887218126122, guid: 4f6ca557b6b0e0c4f8e748a8561876df, type: 3}
+  - description: An idle standing with a hand waving motion
+    animationClip: {fileID: -203655887218126122, guid: 9416f2418a8602f43be77df1e8f7b52c, type: 3}
+  - description: A standing idle man with his arms spread apart
+    animationClip: {fileID: -203655887218126122, guid: bb8b728253c2d3c4497839f1451dbb6e, type: 3}
+  - description: An elderly person standing idle with a hunched back
+    animationClip: {fileID: -203655887218126122, guid: 4bf454c88d7c22e4f83f0c90372be4af, type: 3}
+  - description: An idle woman standing and looking around
+    animationClip: {fileID: -203655887218126122, guid: 7873894b54db4b947844b1dd63562dd2, type: 3}
+  - description: An idle position where the person looks at their feet from time
+      to time.
+    animationClip: {fileID: -203655887218126122, guid: f9dcec1d6f6154842adb5ef80d5558bc, type: 3}
+  - description: An idle posture of a warrior appearing fearless
+    animationClip: {fileID: -203655887218126122, guid: 57f55df0918734d49a12f0178d52f282, type: 3}
+  - description: An idle where the person does not stand still and appears aggressive.
+    animationClip: {fileID: -203655887218126122, guid: d9489fb216c340b4ea10c3c0828a1fda, type: 3}
+  - description: An idle where the person waits and occasionally looks at their watch.
+    animationClip: {fileID: -203655887218126122, guid: 9e6b64ee555062a4bb557f0fc94ea464, type: 3}
+  - description: A gender-neutral idle where the person is standing and waiting
+    animationClip: {fileID: -203655887218126122, guid: 8405bee70a4092944941c318d5119603, type: 3}
+  - description: An idle where the person seems desperate
+    animationClip: {fileID: -203655887218126122, guid: 8b5c1f8f3fc7d2b40897ae0d713bb860, type: 3}
+  - description: An idle where the person seems impatient while looking around.
+    animationClip: {fileID: -203655887218126122, guid: e10c06984877ddf439146aa9b37c8dac, type: 3}
+  - description: An idle where the person is bored and moves their feet
+    animationClip: {fileID: -203655887218126122, guid: 33885e73e9da97245a4ee0421839bfc0, type: 3}
+  - description: An annoying, irritated, and impatient woman idling.
+    animationClip: {fileID: -203655887218126122, guid: 7ec02341a1af44a45af1ffd56252dc9f, type: 3}
