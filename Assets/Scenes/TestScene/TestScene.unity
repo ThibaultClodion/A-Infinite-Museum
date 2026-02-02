@@ -895,6 +895,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 537155493}
     m_Modifications:
+    - target: {fileID: 809100626957622059, guid: 67f84b50608e701419516651e1991b67, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 05608e05235735044b83f3fbdb763560, type: 3}
+    - target: {fileID: 2256924866093501244, guid: 67f84b50608e701419516651e1991b67, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1ffd46ef2c3a6f447aadf847fc0acb1d, type: 3}
+    - target: {fileID: 2699537167735619496, guid: 67f84b50608e701419516651e1991b67, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 300ddb8385d57be4abf9742fef2df24b, type: 3}
     - target: {fileID: 3706263959438641584, guid: 67f84b50608e701419516651e1991b67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -935,10 +947,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6566819779785123575, guid: 67f84b50608e701419516651e1991b67, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3d27f26bbe265084db4d94d12e3ea798, type: 3}
     - target: {fileID: 7046201914106593810, guid: 67f84b50608e701419516651e1991b67, type: 3}
       propertyPath: m_Name
       value: Room (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7951145898853861395, guid: 67f84b50608e701419516651e1991b67, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a526de9c5dd3ca40b9f16b9dd0446e4, type: 3}
+    - target: {fileID: 8045025315086388723, guid: 67f84b50608e701419516651e1991b67, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c326ef15ff26f544181e665bf7ebdcf0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
