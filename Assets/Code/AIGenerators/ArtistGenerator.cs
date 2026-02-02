@@ -60,4 +60,31 @@ public class ArtistModel
 
     [JsonPropertyName("description")]
     public string Description { get; set; }
+
+    [JsonPropertyName("meshDescription")]
+    public string MeshDescription { get; set; }
+
+    [JsonPropertyName("animationDescription")]
+    public string AnimationDescription { get; set; }
+
+    [JsonPropertyName("voiceDescription")]
+    public string VoiceDescription { get; set; }
+
+    [JsonPropertyName("wallsColor")]
+    public string WallsColor { get; set; }
+
+    [JsonPropertyName("floorColor")]
+    public string floorColor { get; set; }
+
+    [JsonPropertyName("roofColor")]
+    public string roofColor { get; set; }
+
+    [JsonPropertyName("frameColor")]
+    public string frameColor { get; set; }
+
+    [JsonPropertyName("frameInformationColor")]
+    public string frameInformationColor { get; set; }
+
+    [JsonPropertyName("paintingPrompts")]
+    public string[] paintingPrompts { get; set; }
 }

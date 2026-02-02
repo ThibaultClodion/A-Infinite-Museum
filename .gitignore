@@ -28,6 +28,9 @@
 # Samples from Meta SDK
 /[Aa]ssets/Samples
 
+# Big files
+/[Aa]ssets/Models/Artist
+
 #API Keys
 /[Aa]ssets/Code/AIGenerators/APIKeys*
 
