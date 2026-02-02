@@ -17,11 +17,11 @@ MonoBehaviour:
     meshPrefab: {fileID: 919132149155446097, guid: 24be27f13be5cf9479cd9733afcb317b, type: 3}
   - description: 'A white bald man in his thirties wearing a polo shirt and jeans '
     meshPrefab: {fileID: 919132149155446097, guid: 67f9b9aeb6c5b2b478aa519a483c0c9e, type: 3}
-  - description: A black man in his thirties wearing sweatpants and headphones.
-    meshPrefab: {fileID: 919132149155446097, guid: 8e814ffe3ba98e74198e3902fb370379, type: 3}
   - description: A white man around 25 years old with brown hair and beard, wearing
       sweatpants.
     meshPrefab: {fileID: 919132149155446097, guid: 173e5a941405ed944945cf93810082f6, type: 3}
+  - description: A black man in his thirties wearing sweatpants and headphones.
+    meshPrefab: {fileID: 919132149155446097, guid: 8e814ffe3ba98e74198e3902fb370379, type: 3}
   - description: A black man dressed in a shirt and pants, approximately 25 years
       old.
     meshPrefab: {fileID: 919132149155446097, guid: b69a1e3eff55ecd4c98eda8b8d26a07e, type: 3}
@@ -111,141 +111,103 @@ MonoBehaviour:
   - description: An annoying, irritated, and impatient woman idling.
     animationClip: {fileID: -203655887218126122, guid: 7ec02341a1af44a45af1ffd56252dc9f, type: 3}
   descriptionToVoice:
-  - description: Easy going and perfect for casual conversations.
-    voiceId: CwhRBWXzGAHq8TQ4Fs17
+  - voiceId: CwhRBWXzGAHq8TQ4Fs17
+    description: Easy going and perfect for casual conversations.
     voiceName: Roger - Laid-Back, Casual, Resonant
-    voiceDescription: Easy going and perfect for casual conversations.
     labels: accent=american,descriptive=classy,age=middle_aged,gender=male,language=en,use_case=conversational
-  - description: Young adult woman with a confident and warm, mature quality and
+  - voiceId: EXAVITQu4vr4xnSDxMaL
+    description: Young adult woman with a confident and warm, mature quality and
       a reassuring, professional tone.
-    voiceId: EXAVITQu4vr4xnSDxMaL
     voiceName: Sarah - Mature, Reassuring, Confident
-    voiceDescription: Young adult woman with a confident and warm, mature quality
-      and a reassuring, professional tone.
     labels: accent=american,descriptive=professional,age=young,gender=female,language=en,use_case=entertainment_tv
-  - description: This young adult female voice delivers sunny enthusiasm with a quirky
+  - voiceId: FGY2WhTYpPnrIDTdsKH5
+    description: This young adult female voice delivers sunny enthusiasm with a quirky
       attitude.
-    voiceId: FGY2WhTYpPnrIDTdsKH5
     voiceName: Laura - Enthusiast, Quirky Attitude
-    voiceDescription: This young adult female voice delivers sunny enthusiasm with
-      a quirky attitude.
     labels: accent=american,descriptive=sassy,age=young,gender=female,language=en,use_case=social_media
-  - description: A young Australian male with a confident and energetic voice.
-    voiceId: IKne3meq5aSn9XLyUdCD
+  - voiceId: IKne3meq5aSn9XLyUdCD
+    description: A young Australian male with a confident and energetic voice.
     voiceName: Charlie - Deep, Confident, Energetic
-    voiceDescription: A young Australian male with a confident and energetic voice.
     labels: accent=australian,descriptive=hyped,age=young,gender=male,language=en,use_case=conversational
-  - description: Warm resonance that instantly captivates listeners.
-    voiceId: JBFqnCBsd6RMkjVDRZzb
+  - voiceId: JBFqnCBsd6RMkjVDRZzb
+    description: Warm resonance that instantly captivates listeners.
     voiceName: George - Warm, Captivating Storyteller
-    voiceDescription: Warm resonance that instantly captivates listeners.
     labels: accent=british,descriptive=mature,age=middle_aged,gender=male,language=en,use_case=narrative_story
-  - description: Deceptively gravelly, yet unsettling edge.
-    voiceId: N2lVS1w4EtoT3dr4eOWO
+  - voiceId: N2lVS1w4EtoT3dr4eOWO
+    description: Deceptively gravelly, yet unsettling edge.
     voiceName: Callum - Husky Trickster
-    voiceDescription: Deceptively gravelly, yet unsettling edge.
     labels: accent=american,age=middle_aged,language=en,gender=male,use_case=characters_animation
-  - description: A relaxed, neutral voice ready for narrations or conversational
+  - voiceId: SAz9YHcvj6GT2YYXdXww
+    description: A relaxed, neutral voice ready for narrations or conversational
       projects.
-    voiceId: SAz9YHcvj6GT2YYXdXww
     voiceName: River - Relaxed, Neutral, Informative
-    voiceDescription: A relaxed, neutral voice ready for narrations or conversational
-      projects.
     labels: accent=american,descriptive=calm,age=middle_aged,gender=neutral,language=en,use_case=conversational
-  - description: An animated warrior ready to charge forward.
-    voiceId: SOYHLrjzK2X1ezoPC6cr
+  - voiceId: SOYHLrjzK2X1ezoPC6cr
+    description: An animated warrior ready to charge forward.
     voiceName: Harry - Fierce Warrior
-    voiceDescription: An animated warrior ready to charge forward.
     labels: accent=american,descriptive=rough,age=young,gender=male,language=en,use_case=characters_animation
-  - description: A young adult with energy and warmth - suitable for reels and shorts.
-    voiceId: TX3LPaxmHKxFdv7VOQHJ
+  - voiceId: TX3LPaxmHKxFdv7VOQHJ
+    description: A young adult with energy and warmth - suitable for reels and shorts.
     voiceName: Liam - Energetic, Social Media Creator
-    voiceDescription: A young adult with energy and warmth - suitable for reels and
-      shorts.
     labels: accent=american,descriptive=confident,age=young,gender=male,language=en,use_case=social_media
-  - description: Clear and engaging, friendly woman with a British accent suitable
+  - voiceId: Xb7hH8MSUJpSbSDYk0k2
+    description: Clear and engaging, friendly woman with a British accent suitable
       for e-learning.
-    voiceId: Xb7hH8MSUJpSbSDYk0k2
     voiceName: Alice - Clear, Engaging Educator
-    voiceDescription: Clear and engaging, friendly woman with a British accent suitable
-      for e-learning.
     labels: accent=british,descriptive=professional,age=middle_aged,gender=female,language=en,use_case=informative_educational
-  - description: A professional woman with a pleasing alto pitch. Suitable for many
+  - voiceId: XrExE9yKIg1WjnnlVkGX
+    description: A professional woman with a pleasing alto pitch. Suitable for many
       use cases.
-    voiceId: XrExE9yKIg1WjnnlVkGX
     voiceName: Matilda - Knowledgable, Professional
-    voiceDescription: A professional woman with a pleasing alto pitch. Suitable for
-      many use cases.
     labels: accent=american,descriptive=upbeat,age=middle_aged,gender=female,language=en,use_case=informative_educational
-  - description: Conversational and laid back.
-    voiceId: bIHbv24MWmeRgasZH58o
+  - voiceId: bIHbv24MWmeRgasZH58o
+    description: Conversational and laid back.
     voiceName: Will - Relaxed Optimist
-    voiceDescription: Conversational and laid back.
     labels: accent=american,descriptive=chill,age=young,gender=male,language=en,use_case=conversational
-  - description: Young and popular, this playful American female voice is perfect
+  - voiceId: cgSgspJ2msm6clMCkdW9
+    description: Young and popular, this playful American female voice is perfect
       for trendy content.
-    voiceId: cgSgspJ2msm6clMCkdW9
     voiceName: Jessica - Playful, Bright, Warm
-    voiceDescription: Young and popular, this playful American female voice is perfect
-      for trendy content.
     labels: accent=american,descriptive=cute,age=young,gender=female,language=en,use_case=conversational
-  - description: A smooth tenor pitch from a man in his 40s - perfect for agentic
+  - voiceId: cjVigY5qzO86Huf0OWal
+    description: A smooth tenor pitch from a man in his 40s - perfect for agentic
       use cases.
-    voiceId: cjVigY5qzO86Huf0OWal
     voiceName: Eric - Smooth, Trustworthy
-    voiceDescription: A smooth tenor pitch from a man in his 40s - perfect for agentic
-      use cases.
     labels: accent=american,descriptive=classy,age=middle_aged,gender=male,language=en,use_case=conversational
-  - description: This voice is warm, bright, and professional, characterized by a
+  - voiceId: hpp4J3VqNfWAUOO0d1Us
+    description: This voice is warm, bright, and professional, characterized by a
       Standard American accent and a polished, narrative quality. It features a medium-high
       pitch with crisp diction and a deliberate, rhythmic pace that makes it highly
       intelligible and engaging for long-form listening.
-    voiceId: hpp4J3VqNfWAUOO0d1Us
     voiceName: Bella - Professional, Bright, Warm
-    voiceDescription: This voice is warm, bright, and professional, characterized
-      by a Standard American accent and a polished, narrative quality. It features
-      a medium-high pitch with crisp diction and a deliberate, rhythmic pace that
-      makes it highly intelligible and engaging for long-form listening.
     labels: accent=american,descriptive=professional,age=middle_aged,gender=female,language=en,use_case=informative_educational
-  - description: Natural and real, this down-to-earth voice is great across many
+  - voiceId: iP95p4xoKVk53GoZ742B
+    description: Natural and real, this down-to-earth voice is great across many
       use-cases.
-    voiceId: iP95p4xoKVk53GoZ742B
     voiceName: Chris - Charming, Down-to-Earth
-    voiceDescription: Natural and real, this down-to-earth voice is great across
-      many use-cases.
     labels: accent=american,descriptive=casual,age=middle_aged,gender=male,language=en,use_case=conversational
-  - description: Middle-aged man with a resonant and comforting tone. Great for narrations
+  - voiceId: nPczCjzI2devNBz1zQrb
+    description: Middle-aged man with a resonant and comforting tone. Great for narrations
       and advertisements.
-    voiceId: nPczCjzI2devNBz1zQrb
     voiceName: Brian - Deep, Resonant and Comforting
-    voiceDescription: Middle-aged man with a resonant and comforting tone. Great
-      for narrations and advertisements.
     labels: accent=american,descriptive=classy,age=middle_aged,gender=male,language=en,use_case=social_media
-  - description: A strong voice perfect for delivering a professional broadcast or
+  - voiceId: onwK4e9ZLuTAKqWW03F9
+    description: A strong voice perfect for delivering a professional broadcast or
       news story.
-    voiceId: onwK4e9ZLuTAKqWW03F9
     voiceName: Daniel - Steady Broadcaster
-    voiceDescription: A strong voice perfect for delivering a professional broadcast
-      or news story.
     labels: accent=british,descriptive=formal,age=middle_aged,gender=male,language=en,use_case=informative_educational
-  - description: Velvety British female voice delivers news and narrations with warmth
+  - voiceId: pFZP5JQG7iQjIQuC4Bku
+    description: Velvety British female voice delivers news and narrations with warmth
       and clarity.
-    voiceId: pFZP5JQG7iQjIQuC4Bku
     voiceName: Lily - Velvety Actress
-    voiceDescription: Velvety British female voice delivers news and narrations with
-      warmth and clarity.
     labels: accent=british,descriptive=confident,age=middle_aged,gender=female,language=en,use_case=informative_educational
-  - description: A bright tenor pitch that immediately cuts through. The delivery
+  - voiceId: pNInz6obpgDQGcFmaJgB
+    description: A bright tenor pitch that immediately cuts through. The delivery
       is brash and openly confident, speaking with unwavering certainty and a slightly
       aggressive self-assurance.
-    voiceId: pNInz6obpgDQGcFmaJgB
     voiceName: Adam - Dominant, Firm
-    voiceDescription: A bright tenor pitch that immediately cuts through. The delivery
-      is brash and openly confident, speaking with unwavering certainty and a slightly
-      aggressive self-assurance.
     labels: accent=american,age=middle_aged,language=en,gender=male,use_case=social_media
-  - description: Friendly and comforting voice ready to narrate your stories.
-    voiceId: pqHfZKP75CvOlQylNhV4
+  - voiceId: pqHfZKP75CvOlQylNhV4
+    description: Friendly and comforting voice ready to narrate your stories.
     voiceName: Bill - Wise, Mature, Balanced
-    voiceDescription: Friendly and comforting voice ready to narrate your stories.
     labels: accent=american,descriptive=crisp,age=old,gender=male,language=en,use_case=advertisement

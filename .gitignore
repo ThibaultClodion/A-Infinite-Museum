@@ -30,6 +30,7 @@
 
 # Big files
 /[Aa]ssets/Models/Artist
+/[Aa]ssets/GeneratedArtists
 
 #API Keys
 /[Aa]ssets/Code/AIGenerators/APIKeys*

@@ -30,11 +30,9 @@ public class DescriptionAnimationPair
 [Serializable]
 public class DescriptionVoicePair
 {
-    public string description;
     public string voiceId;
+    public string description;
     public string voiceName;
-    [TextArea(2, 4)]
-    public string voiceDescription;
     public string labels;
 }
 
@@ -196,7 +194,6 @@ public class DescriptionConversionTableEditor : Editor
                     description = !string.IsNullOrEmpty(desc) ? desc : "No description available",
                     voiceId = voiceId,
                     voiceName = !string.IsNullOrEmpty(name) ? name : voiceId,
-                    voiceDescription = desc,
                     labels = labelsFlat
                 });
             }
