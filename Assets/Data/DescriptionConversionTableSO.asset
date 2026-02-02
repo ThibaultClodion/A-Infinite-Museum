@@ -13,5 +13,56 @@ MonoBehaviour:
   m_Name: DescriptionConversionTableSO
   m_EditorClassIdentifier: Assembly-CSharp::DescriptionConversionTable
   descriptionToMesh:
-  - description: 
+  - description: A white blond man around 25 years old with a small belly
     meshPrefab: {fileID: 919132149155446097, guid: 24be27f13be5cf9479cd9733afcb317b, type: 3}
+  - description: 'A white bald man in his thirties wearing a polo shirt and jeans '
+    meshPrefab: {fileID: 919132149155446097, guid: 67f9b9aeb6c5b2b478aa519a483c0c9e, type: 3}
+  - description: A black man in his thirties wearing sweatpants and headphones.
+    meshPrefab: {fileID: 919132149155446097, guid: 8e814ffe3ba98e74198e3902fb370379, type: 3}
+  - description: A white man around 25 years old with brown hair and beard, wearing
+      sweatpants.
+    meshPrefab: {fileID: 919132149155446097, guid: 173e5a941405ed944945cf93810082f6, type: 3}
+  - description: A black man dressed in a shirt and pants, approximately 25 years
+      old.
+    meshPrefab: {fileID: 919132149155446097, guid: b69a1e3eff55ecd4c98eda8b8d26a07e, type: 3}
+  - description: A white man in his thirties with a beard and brown hair, dressed
+      in construction work clothes.
+    meshPrefab: {fileID: 919132149155446097, guid: db7bdf658529e0146b3ea5302eb11679, type: 3}
+  - description: A white man with brown hairs under 30 years old wearing a suit.
+    meshPrefab: {fileID: 919132149155446097, guid: f24bed4705403e84c9f6d6377d3cef56, type: 3}
+  - description: A 25-year-old black man dressed in a tracksuit
+    meshPrefab: {fileID: 919132149155446097, guid: e74b2ef2432e6f64e856c6a0d53b4328, type: 3}
+  - description: An Asian man in his thirties wearing a sweater and pants with a
+      blue shirt underneath.
+    meshPrefab: {fileID: 919132149155446097, guid: c4f6ae5cf2564e64b9d1d612161cd647, type: 3}
+  - description: A white man in his 40s wearing a full suit
+    meshPrefab: {fileID: 919132149155446097, guid: b6000ef69f92e18479877a404d0a90dd, type: 3}
+  - description: A white man in his 40s wearing soccer gear.
+    meshPrefab: {fileID: 919132149155446097, guid: 5814f807ad2beee4dbfd0297cdecf701, type: 3}
+  - description: A Spanish man in his thirties wearing a red T-shirt, shorts, and
+      tattoos.
+    meshPrefab: {fileID: 919132149155446097, guid: 13ebc045568d14a42a63a14c0cff8566, type: 3}
+  - description: A white woman with blue hair in her thirties wearing a space suit.
+    meshPrefab: {fileID: 919132149155446097, guid: cc6ecc0eda567ab4099a8037041d5809, type: 3}
+  - description: A white woman around 35 years old with blonde hair wearing a yellow
+      sweater and denim shorts.
+    meshPrefab: {fileID: 919132149155446097, guid: dce709b644a868c4c87821751eacfc90, type: 3}
+  - description: An Asian woman in her 30s wearing a blue suit
+    meshPrefab: {fileID: 919132149155446097, guid: a2622f4a524ec974d99e1f06a475f66c, type: 3}
+  - description: A white woman in her 40s with short hair wearing kitchen attire.
+    meshPrefab: {fileID: 919132149155446097, guid: 400f1ff97ce7e9b4da0a24c2c239dbc8, type: 3}
+  - description: A white woman in her 40s with short hair wearing a blue shirt and
+      brown pants.
+    meshPrefab: {fileID: 919132149155446097, guid: 613429ebc476b52449c2fa60f9603493, type: 3}
+  - description: A black woman around 50 years old wearing a white sweater and jeans.
+    meshPrefab: {fileID: 919132149155446097, guid: 79502e038c10fc3418536951b4517908, type: 3}
+  - description: A black woman around 40 years old dressed in a blue suit with beige
+      pants.
+    meshPrefab: {fileID: 919132149155446097, guid: 4ac0d6455af650e48a3379961c2a74a2, type: 3}
+  - description: A white woman in her thirties wearing pink and black sweatpants.
+    meshPrefab: {fileID: 919132149155446097, guid: 1ee8567eade812144a74d737eda56e8e, type: 3}
+  - description: An Asian woman in her 40s wearing a white suit and black pants.
+    meshPrefab: {fileID: 919132149155446097, guid: 20cdefaacdeb2924386cf6fbc31d4992, type: 3}
+  - description: A white woman in her thirties with short hair dressed in a superhero
+      costume.
+    meshPrefab: {fileID: 919132149155446097, guid: 53927cd2157220c4cb527a5e26156291, type: 3}
