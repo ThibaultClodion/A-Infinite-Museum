@@ -87,11 +87,6 @@ public class DescriptionConversionTableEditor : Editor
         }
 
         EditorGUILayout.Space(10);
-
-        if (table.DescriptionToVoice != null && table.DescriptionToVoice.Count > 0)
-        {
-            EditorGUILayout.LabelField($"Voices loaded: {table.DescriptionToVoice.Count}", EditorStyles.helpBox);
-        }
     }
 
     private async void FetchVoicesAsync(DescriptionConversionTableSO table)

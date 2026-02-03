@@ -14,7 +14,10 @@ public class ArtistSO : ScriptableObject
 
     private void OnEnable()
     {
-        ArtistModel = JsonSerializer.Deserialize<ArtistModel>(Json.text);
+        if(Json != null)
+        {
+            ArtistModel = JsonSerializer.Deserialize<ArtistModel>(Json.text);
+        }
     }
 }
 

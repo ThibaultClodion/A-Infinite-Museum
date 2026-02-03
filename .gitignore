@@ -29,8 +29,9 @@
 /[Aa]ssets/Samples
 
 # Big files
-/[Aa]ssets/Models/Artist
-/[Aa]ssets/GeneratedArtists
+/[Aa]ssets/Models/Artist*
+/[Aa]ssets/GeneratedArtists*
+/[Aa]ssets/NewGeneratedArtists*
 
 # Visual Studio cache directory
 .vs/

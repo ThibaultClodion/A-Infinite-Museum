@@ -16,7 +16,7 @@ public class ArtistGenerator : MonoBehaviour
     [Range(0.5f, 0.95f)]
     [SerializeField] private float _topP = 0.95f;
 
-    private const string c_generated_artist_folder = "GeneratedArtists";
+    private const string c_generated_artist_folder = "NewGeneratedArtists";
 
     public async Task GenerateAnArtist()
     {
@@ -132,7 +132,7 @@ public class ArtistGenerator : MonoBehaviour
                 { "paintingPrompts", new Schema()
                     {
                         Type = Type.ARRAY,
-                        Description = "A list of 6 painting prompts that the artist have painted and exposes in his museum.",
+                        Description = "A list of 6 prompts that will be used to create and define the artist's paintings.",
                         Items = new Schema() { Type = Type.STRING }
                     }
                 }
