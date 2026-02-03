@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Threading.Tasks;
 using Google.GenAI;
 using Google.GenAI.Types;
-using System.Text.Json.Serialization;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Linq;
@@ -11,38 +10,51 @@ using System.IO;
 public class ArtistGenerator : MonoBehaviour
 {
     [Header("Generation Parameters")]
-    [SerializeField] private DescriptionConversionTable descriptionConversionTable;
+    [SerializeField] private DescriptionConversionTableSO _descriptionConversionTable;
+    [Range(1.0f, 1.8f)]
+    [SerializeField] private float _temperature = 1.8f;
+    [Range(0.5f, 0.95f)]
+    [SerializeField] private float _topP = 0.95f;
 
-    private Client client = new Client(apiKey: APIKeys.GEMINI_API_KEY);
-
-    private const string GENERATED_ARTISTS_FOLDER_NAME = "GeneratedArtists";
+    private const string c_generated_artist_folder = "GeneratedArtists";
 
     public async Task GenerateAnArtist()
     {
-        if(client == null)
+#if UNITY_EDITOR
+        string apiKey = UnityEditor.EditorPrefs.GetString(ArtistGeneratorEditor.c_apiKeyPrefKey, "");
+        
+        if (string.IsNullOrWhiteSpace(apiKey))
         {
-            Debug.LogError("Client is not initialized. Please check your API key.");
+            Debug.LogError("Gemini API Key is not set. Please configure it in the Inspector.");
             return;
         }
 
-        // Configure content generation parameters to get a random artist
-        var config = new GenerateContentConfig();
-        config.ResponseMimeType = "application/json";
-        config.Seed = Random.Range(1, int.MaxValue);
-        config.Temperature = 1.8f;
-        config.TopP = 0.95f;
+        Client client = new Client(apiKey: apiKey);
+#else
+        Debug.LogError("Artist generation is only available in the Unity Editor.");
+        return;
+#endif
+
+        // Configure the content generation parameters
+        GenerateContentConfig config = new GenerateContentConfig
+        {
+            ResponseMimeType = "application/json",
+            Seed = Random.Range(1, int.MaxValue),
+            Temperature = _temperature,
+            TopP = _topP
+        };
 
         // Prepare enum lists for mesh, animation, and voice descriptions
-        List<string> meshDescriptions = descriptionConversionTable.descriptionToMesh
-            .Select(pair => pair.description)
+        List<string> meshDescriptions = _descriptionConversionTable.DescriptionToMesh
+            .Select(pair => pair.Description)
             .ToList();
 
-        List<string> animationDescriptions = descriptionConversionTable.descriptionToAnimation
-            .Select(pair => pair.description)
+        List<string> animationDescriptions = _descriptionConversionTable.DescriptionToAnimation
+            .Select(pair => pair.Description)
             .ToList();
 
-        List<string> voiceDescriptions = descriptionConversionTable.descriptionToVoice
-            .Select(pair => pair.description + " " + pair.voiceName + " " + pair.labels)
+        List<string> voiceDescriptions = _descriptionConversionTable.DescriptionToVoice
+            .Select(pair => pair.Description + " " + pair.VoiceName + " " + pair.Labels)
             .ToList();
 
         // Define the JSON schema for the response
@@ -130,12 +142,13 @@ public class ArtistGenerator : MonoBehaviour
                 "wallsColor", "floorColor", "roofColor", "frameColor", "frameInformationColor", "paintingPrompts" }
         };
 
-        var response = await client.Models.GenerateContentAsync(
+        GenerateContentResponse response = await client.Models.GenerateContentAsync(
             model: "gemini-3-flash-preview",
-            contents: $"Generate a fictional painter name and description. " +
-            $"You MUST use this specific mesh type for the artist: '{meshDescriptions[Random.Range(0, meshDescriptions.Count)]}'. " +
-            $"Create the artist's personality, style, and all other parameters to match this mesh choice creatively.",
-            config
+            contents: $"Act as an art historian. Using the physical form of a '{meshDescriptions[Random.Range(0, meshDescriptions.Count)]}', " +
+                          "define a painter with a hyper-specific artistic movement and temperament. " +
+                          "Ensure their voice, animation, and studio colors are a direct manifestation of their creative 'obsession'. " +
+                          "The painting prompts must read like titles from a solo exhibition at a art gallery.",
+            config: config
         );
 
         // Parse the JSON response
@@ -148,10 +161,8 @@ public class ArtistGenerator : MonoBehaviour
 
     public void SaveJSONFile(string jsonContent, ArtistModel artist)
     {
-        // Save the JSON file in a folder named GENERATED_ARTISTS_FOLDER inside the Assets folder
-        string baseGeneratedArtistsPath = Path.Combine(Application.dataPath, GENERATED_ARTISTS_FOLDER_NAME);
-
         // Create a safe folder name from the artist name
+        string baseGeneratedArtistsPath = Path.Combine(Application.dataPath, c_generated_artist_folder);
         string safeFolderName = string.Join("_", artist.Name.Split(Path.GetInvalidFileNameChars()));
         string artistFolderPath = Path.Combine(baseGeneratedArtistsPath, safeFolderName);
 
@@ -165,11 +176,9 @@ public class ArtistGenerator : MonoBehaviour
         // Create the artist's folder
         Directory.CreateDirectory(artistFolderPath);
 
-        // Create the JSON file path
+        // Create the JSON file path and write the content
         string filePath = Path.Combine(artistFolderPath, $"{safeFolderName}.json");
-
-        // Write the JSON to file with pretty formatting
-        var options = new JsonSerializerOptions { WriteIndented = true };
+        JsonSerializerOptions options = new JsonSerializerOptions { WriteIndented = true };
         string formattedJson = JsonSerializer.Serialize(artist, options);
         System.IO.File.WriteAllText(filePath, formattedJson);
 
@@ -180,40 +189,4 @@ public class ArtistGenerator : MonoBehaviour
         UnityEditor.AssetDatabase.Refresh();
 #endif
     }
-}
-
-public class ArtistModel
-{
-    [JsonPropertyName("name")]
-    public string Name { get; set; }
-
-    [JsonPropertyName("description")]
-    public string Description { get; set; }
-
-    [JsonPropertyName("meshDescription")]
-    public string MeshDescription { get; set; }
-
-    [JsonPropertyName("animationDescription")]
-    public string AnimationDescription { get; set; }
-
-    [JsonPropertyName("voiceDescription")]
-    public string VoiceDescription { get; set; }
-
-    [JsonPropertyName("wallsColor")]
-    public int[] WallsColor { get; set; }
-
-    [JsonPropertyName("floorColor")]
-    public int[] floorColor { get; set; }
-
-    [JsonPropertyName("roofColor")]
-    public int[] roofColor { get; set; }
-
-    [JsonPropertyName("frameColor")]
-    public int[] frameColor { get; set; }
-
-    [JsonPropertyName("frameInformationColor")]
-    public int[] frameInformationColor { get; set; }
-
-    [JsonPropertyName("paintingPrompts")]
-    public string[] paintingPrompts { get; set; }
 }

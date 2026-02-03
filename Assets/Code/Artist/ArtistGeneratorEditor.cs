@@ -4,8 +4,16 @@ using UnityEngine;
 [CustomEditor(typeof(ArtistGenerator))]
 public class ArtistGeneratorEditor : Editor
 {
-    private static bool isRunning = false;
-    private static int artistCount = 0;
+    public const string c_apiKeyPrefKey = "Gemini_ApiKey";
+    private string _apiKey = "";
+
+    private static bool s_isRunning = false;
+    private static int s_artistCount = 0;
+
+    private void OnEnable()
+    {
+        _apiKey = EditorPrefs.GetString(c_apiKeyPrefKey, "");
+    }
 
     public override void OnInspectorGUI()
     {
@@ -13,15 +21,32 @@ public class ArtistGeneratorEditor : Editor
 
         ArtistGenerator script = (ArtistGenerator)target;
 
+        EditorGUILayout.Space(20);
+        EditorGUILayout.LabelField("Gemini API Configuration", EditorStyles.boldLabel);
+        EditorGUILayout.Space(5);
+
+        EditorGUI.BeginChangeCheck();
+        _apiKey = EditorGUILayout.TextField(new GUIContent("API Key", "Your Google Gemini API key"), _apiKey);
+
+        if (EditorGUI.EndChangeCheck())
+        {
+            EditorPrefs.SetString(c_apiKeyPrefKey, _apiKey);
+        }
+
+        if (string.IsNullOrWhiteSpace(_apiKey))
+        {
+            EditorGUILayout.HelpBox("Please set your Gemini API Key to generate artists.", MessageType.Warning);
+        }
+
         EditorGUILayout.Space(10);
 
         // Display current status
-        if (isRunning)
+        if (s_isRunning)
         {
-            EditorGUILayout.HelpBox($"Currently generating artists... ({artistCount} created)", MessageType.Info);
+            EditorGUILayout.HelpBox($"Currently generating artists... ({s_artistCount} created)", MessageType.Info);
         }
 
-        using (new EditorGUI.DisabledScope(isRunning))
+        using (new EditorGUI.DisabledScope(s_isRunning || string.IsNullOrWhiteSpace(_apiKey)))
         {
             if (GUILayout.Button("Generate An Artist", GUILayout.Height(40)))
             {
@@ -34,17 +59,17 @@ public class ArtistGeneratorEditor : Editor
             }
         }
 
-        using (new EditorGUI.DisabledScope(!isRunning))
+        using (new EditorGUI.DisabledScope(!s_isRunning))
         {
             if (GUILayout.Button("Stop Generating Artists", GUILayout.Height(40)))
             {
-                isRunning = false;
-                Debug.Log($"Stop requested. Total artists generated: {artistCount}");
+                s_isRunning = false;
+                Debug.Log($"Stop requested. Total artists generated: {s_artistCount}");
             }
         }
 
         // Force repaint while running to update UI
-        if (isRunning)
+        if (s_isRunning)
         {
             Repaint();
         }
@@ -52,7 +77,7 @@ public class ArtistGeneratorEditor : Editor
 
     private async void GenerateArtistInLoop(ArtistGenerator script)
     {
-        if (isRunning)
+        if (s_isRunning)
         {
             Debug.LogWarning("Artist generation is already running.");
             return;
@@ -60,16 +85,16 @@ public class ArtistGeneratorEditor : Editor
 
         Debug.Log("Start to create artists in loop");
 
-        isRunning = true;
-        artistCount = 0;
+        s_isRunning = true;
+        s_artistCount = 0;
 
-        while (isRunning)
+        while (s_isRunning)
         {
             try
             {
                 await script.GenerateAnArtist();
-                artistCount++;
-                Debug.Log($"Artist {artistCount} generated. Press 'Stop Generating Artists' to stop.");
+                s_artistCount++;
+                Debug.Log($"Artist {s_artistCount} generated. Press 'Stop Generating Artists' to stop.");
 
                 // Force UI update
                 Repaint();
@@ -77,13 +102,13 @@ public class ArtistGeneratorEditor : Editor
             catch (System.Exception ex)
             {
                 Debug.LogError($"Error generating artist: {ex.Message}");
-                isRunning = false;
+                s_isRunning = false;
                 break;
             }
         }
 
-        Debug.Log($"Generation stopped. Total artists created: {artistCount}");
-        isRunning = false;
+        Debug.Log($"Generation stopped. Total artists created: {s_artistCount}");
+        s_isRunning = false;
         Repaint();
     }
 

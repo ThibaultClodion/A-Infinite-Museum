@@ -32,9 +32,6 @@
 /[Aa]ssets/Models/Artist
 /[Aa]ssets/GeneratedArtists
 
-#API Keys
-/[Aa]ssets/Code/APIKeys*
-
 # Visual Studio cache directory
 .vs/
 

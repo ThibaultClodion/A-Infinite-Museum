@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08eda3c7076d36e4483fa1e96ead5403, type: 3}
-  m_Name: DescriptionConversionTableSO
+  m_Name: AllDescriptioConversionTable
   m_EditorClassIdentifier: Assembly-CSharp::DescriptionConversionTable
   descriptionToMesh:
   - description: A white blond man around 25 years old with a small belly
@@ -64,6 +64,8 @@ MonoBehaviour:
   - description: A white woman in her thirties with short hair dressed in a superhero
       costume.
     meshPrefab: {fileID: 919132149155446097, guid: 53927cd2157220c4cb527a5e26156291, type: 3}
+  - description: A white woman with blue hair in her thirties wearing a space suit.
+    meshPrefab: {fileID: 919132149155446097, guid: cc6ecc0eda567ab4099a8037041d5809, type: 3}
   descriptionToAnimation:
   - description: 'A man who is idle and moves little. '
     animationClip: {fileID: -203655887218126122, guid: ccc97f1926a7dd445a478770b452eb01, type: 3}

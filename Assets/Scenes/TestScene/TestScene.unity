@@ -148,7 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2ab9756aaa20f48a9bdd30a06ee6a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GeminiAPI
-  descriptionConversionTable: {fileID: 11400000, guid: 02a89f1148e463444ba73adaab25d062, type: 2}
+  _descriptionConversionTable: {fileID: 11400000, guid: 02a89f1148e463444ba73adaab25d062, type: 2}
+  _temperature: 1.8
+  _topP: 0.95
 --- !u!4 &282170499
 Transform:
   m_ObjectHideFlags: 0

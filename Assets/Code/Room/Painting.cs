@@ -5,19 +5,19 @@ using UnityEngine.UI;
 public class Painting : MonoBehaviour
 {
     [Header("Painting")]
-    [SerializeField] private Image paintingImage;
-    [SerializeField] private Renderer frameRenderer;
+    [SerializeField] private Image _paintingImage;
+    [SerializeField] private Renderer _frameRenderer;
 
     [Header("Informations")]
-    [HideInInspector] public string promptUsed;
-    [SerializeField] private Renderer informationFrameRenderer;
-    [SerializeField] private TextMeshProUGUI informationText;
-    [SerializeField] private TextMeshProUGUI artistNameText;
+    [HideInInspector] public string PromptUsed;
+    [SerializeField] private Renderer _informationFrameRenderer;
+    [SerializeField] private TextMeshProUGUI _informationText;
+    [SerializeField] private TextMeshProUGUI _artistNameText;
 
     public void ChangePainting(Sprite sprite, Color frameColor)
     {
-        paintingImage.sprite = sprite;
-        frameRenderer.material.color = frameColor;
+        _paintingImage.sprite = sprite;
+        _frameRenderer.material.color = frameColor;
 
         AdaptSize(sprite);
     }
@@ -29,10 +29,10 @@ public class Painting : MonoBehaviour
 
     public void ChangeInformation(Color frameColor, string promptUsed, string artistName)
     {
-        this.promptUsed = promptUsed;
+        PromptUsed = promptUsed;
 
-        informationFrameRenderer.material.color = frameColor;
-        informationText.text = promptUsed;
-        artistNameText.text = artistName;
+        _informationFrameRenderer.material.color = frameColor;
+        _informationText.text = promptUsed;
+        _artistNameText.text = artistName;
     }
 }

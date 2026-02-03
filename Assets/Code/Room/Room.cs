@@ -4,15 +4,15 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     [Header("Room Fondations")]
-    [SerializeField] private List<Renderer> wallsRenderer;
-    [SerializeField] private Renderer floorRenderer;
-    [SerializeField] private Renderer roofRenderer;
+    [SerializeField] private List<Renderer> _wallsRenderer;
+    [SerializeField] private Renderer _floorRenderer;
+    [SerializeField] private Renderer _roofRenderer;
 
     [Header("Paintings")]
-    [SerializeField] private List<Painting> paintings;
+    [SerializeField] private List<Painting> _paintings;
 
     [Header("Lectern")]
-    [SerializeField] private Lectern lectern;
+    [SerializeField] private Lectern _lectern;
 
     void Start()
     {
