@@ -19,43 +19,50 @@ MonoBehaviour:
     MeshPrefab: {fileID: 919132149155446097, guid: 67f9b9aeb6c5b2b478aa519a483c0c9e, type: 3}
   - Description: A black man in his thirties wearing sweatpants and headphones.
     MeshPrefab: {fileID: 919132149155446097, guid: 8e814ffe3ba98e74198e3902fb370379, type: 3}
-  - Description: A white man around 25 years old with brown hair and beard, wearing sweatpants.
+  - Description: A white man around 25 years old with brown hair and beard, wearing
+      sweatpants.
     MeshPrefab: {fileID: 919132149155446097, guid: 173e5a941405ed944945cf93810082f6, type: 3}
-  - Description: A black man dressed in a shirt and pants, approximately 25 years old.
+  - Description: A black man dressed in a shirt and pants, approximately 25 years
+      old.
     MeshPrefab: {fileID: 919132149155446097, guid: b69a1e3eff55ecd4c98eda8b8d26a07e, type: 3}
-  - Description: A white man in his thirties with a beard and brown hair, dressed in construction work clothes.
+  - Description: A white man in his thirties with a beard and brown hair, dressed
+      in construction work clothes.
     MeshPrefab: {fileID: 919132149155446097, guid: db7bdf658529e0146b3ea5302eb11679, type: 3}
   - Description: A white man with brown hairs under 30 years old wearing a suit.
     MeshPrefab: {fileID: 919132149155446097, guid: f24bed4705403e84c9f6d6377d3cef56, type: 3}
   - Description: A 25-year-old black man dressed in a tracksuit
     MeshPrefab: {fileID: 919132149155446097, guid: e74b2ef2432e6f64e856c6a0d53b4328, type: 3}
-  - Description: An Asian man in his thirties wearing a sweater and pants with a blue shirt underneath.
+  - Description: An Asian man in his thirties wearing a sweater and pants with a
+      blue shirt underneath.
     MeshPrefab: {fileID: 919132149155446097, guid: c4f6ae5cf2564e64b9d1d612161cd647, type: 3}
   - Description: A white man in his 40s wearing a full suit
     MeshPrefab: {fileID: 919132149155446097, guid: b6000ef69f92e18479877a404d0a90dd, type: 3}
   - Description: A white man in his 40s wearing soccer gear.
     MeshPrefab: {fileID: 919132149155446097, guid: 5814f807ad2beee4dbfd0297cdecf701, type: 3}
-  - Description: A Spanish man in his thirties wearing a red T-shirt, shorts, and tattoos.
+  - Description: A Spanish man in his thirties wearing a red T-shirt, shorts, and
+      tattoos.
     MeshPrefab: {fileID: 919132149155446097, guid: 13ebc045568d14a42a63a14c0cff8566, type: 3}
-  - Description: A white woman with blue hair in her thirties wearing a space suit.
-    MeshPrefab: {fileID: 919132149155446097, guid: cc6ecc0eda567ab4099a8037041d5809, type: 3}
-  - Description: A white woman around 35 years old with blonde hair wearing a yellow sweater and denim shorts.
+  - Description: A white woman around 35 years old with blonde hair wearing a yellow
+      sweater and denim shorts.
     MeshPrefab: {fileID: 919132149155446097, guid: dce709b644a868c4c87821751eacfc90, type: 3}
   - Description: An Asian woman in her 30s wearing a blue suit
     MeshPrefab: {fileID: 919132149155446097, guid: a2622f4a524ec974d99e1f06a475f66c, type: 3}
   - Description: A white woman in her 40s with short hair wearing kitchen attire.
     MeshPrefab: {fileID: 919132149155446097, guid: 400f1ff97ce7e9b4da0a24c2c239dbc8, type: 3}
-  - Description: A white woman in her 40s with short hair wearing a blue shirt and brown pants.
+  - Description: A white woman in her 40s with short hair wearing a blue shirt and
+      brown pants.
     MeshPrefab: {fileID: 919132149155446097, guid: 613429ebc476b52449c2fa60f9603493, type: 3}
   - Description: A black woman around 50 years old wearing a white sweater and jeans.
     MeshPrefab: {fileID: 919132149155446097, guid: 79502e038c10fc3418536951b4517908, type: 3}
-  - Description: A black woman around 40 years old dressed in a blue suit with beige pants.
+  - Description: A black woman around 40 years old dressed in a blue suit with beige
+      pants.
     MeshPrefab: {fileID: 919132149155446097, guid: 4ac0d6455af650e48a3379961c2a74a2, type: 3}
   - Description: A white woman in her thirties wearing pink and black sweatpants.
     MeshPrefab: {fileID: 919132149155446097, guid: 1ee8567eade812144a74d737eda56e8e, type: 3}
   - Description: An Asian woman in her 40s wearing a white suit and black pants.
     MeshPrefab: {fileID: 919132149155446097, guid: 20cdefaacdeb2924386cf6fbc31d4992, type: 3}
-  - Description: A white woman in her thirties with short hair dressed in a superhero costume.
+  - Description: A white woman in her thirties with short hair dressed in a superhero
+      costume.
     MeshPrefab: {fileID: 919132149155446097, guid: 53927cd2157220c4cb527a5e26156291, type: 3}
   DescriptionToAnimation:
   - Description: 'A man who is idle and moves little. '
@@ -82,7 +89,8 @@ MonoBehaviour:
     AnimationClip: {fileID: -203655887218126122, guid: 4bf454c88d7c22e4f83f0c90372be4af, type: 3}
   - Description: An idle woman standing and looking around
     AnimationClip: {fileID: -203655887218126122, guid: 7873894b54db4b947844b1dd63562dd2, type: 3}
-  - Description: An idle position where the person looks at their feet from time to time.
+  - Description: An idle position where the person looks at their feet from time
+      to time.
     AnimationClip: {fileID: -203655887218126122, guid: f9dcec1d6f6154842adb5ef80d5558bc, type: 3}
   - Description: An idle posture of a warrior appearing fearless
     AnimationClip: {fileID: -203655887218126122, guid: 57f55df0918734d49a12f0178d52f282, type: 3}
@@ -106,11 +114,13 @@ MonoBehaviour:
     VoiceName: Roger - Laid-Back, Casual, Resonant
     Labels: accent=american,descriptive=classy,age=middle_aged,gender=male,language=en,use_case=conversational
   - VoiceId: EXAVITQu4vr4xnSDxMaL
-    Description: Young adult woman with a confident and warm, mature quality and a reassuring, professional tone.
+    Description: Young adult woman with a confident and warm, mature quality and
+      a reassuring, professional tone.
     VoiceName: Sarah - Mature, Reassuring, Confident
     Labels: accent=american,descriptive=professional,age=young,gender=female,language=en,use_case=entertainment_tv
   - VoiceId: FGY2WhTYpPnrIDTdsKH5
-    Description: This young adult female voice delivers sunny enthusiasm with a quirky attitude.
+    Description: This young adult female voice delivers sunny enthusiasm with a quirky
+      attitude.
     VoiceName: Laura - Enthusiast, Quirky Attitude
     Labels: accent=american,descriptive=sassy,age=young,gender=female,language=en,use_case=social_media
   - VoiceId: IKne3meq5aSn9XLyUdCD
@@ -126,7 +136,8 @@ MonoBehaviour:
     VoiceName: Callum - Husky Trickster
     Labels: accent=american,age=middle_aged,language=en,gender=male,use_case=characters_animation
   - VoiceId: SAz9YHcvj6GT2YYXdXww
-    Description: A relaxed, neutral voice ready for narrations or conversational projects.
+    Description: A relaxed, neutral voice ready for narrations or conversational
+      projects.
     VoiceName: River - Relaxed, Neutral, Informative
     Labels: accent=american,descriptive=calm,age=middle_aged,gender=neutral,language=en,use_case=conversational
   - VoiceId: SOYHLrjzK2X1ezoPC6cr
@@ -138,11 +149,13 @@ MonoBehaviour:
     VoiceName: Liam - Energetic, Social Media Creator
     Labels: accent=american,descriptive=confident,age=young,gender=male,language=en,use_case=social_media
   - VoiceId: Xb7hH8MSUJpSbSDYk0k2
-    Description: Clear and engaging, friendly woman with a British accent suitable for e-learning.
+    Description: Clear and engaging, friendly woman with a British accent suitable
+      for e-learning.
     VoiceName: Alice - Clear, Engaging Educator
     Labels: accent=british,descriptive=professional,age=middle_aged,gender=female,language=en,use_case=informative_educational
   - VoiceId: XrExE9yKIg1WjnnlVkGX
-    Description: A professional woman with a pleasing alto pitch. Suitable for many use cases.
+    Description: A professional woman with a pleasing alto pitch. Suitable for many
+      use cases.
     VoiceName: Matilda - Knowledgable, Professional
     Labels: accent=american,descriptive=upbeat,age=middle_aged,gender=female,language=en,use_case=informative_educational
   - VoiceId: bIHbv24MWmeRgasZH58o
@@ -150,35 +163,46 @@ MonoBehaviour:
     VoiceName: Will - Relaxed Optimist
     Labels: accent=american,descriptive=chill,age=young,gender=male,language=en,use_case=conversational
   - VoiceId: cgSgspJ2msm6clMCkdW9
-    Description: Young and popular, this playful American female voice is perfect for trendy content.
+    Description: Young and popular, this playful American female voice is perfect
+      for trendy content.
     VoiceName: Jessica - Playful, Bright, Warm
     Labels: accent=american,descriptive=cute,age=young,gender=female,language=en,use_case=conversational
   - VoiceId: cjVigY5qzO86Huf0OWal
-    Description: A smooth tenor pitch from a man in his 40s - perfect for agentic use cases.
+    Description: A smooth tenor pitch from a man in his 40s - perfect for agentic
+      use cases.
     VoiceName: Eric - Smooth, Trustworthy
     Labels: accent=american,descriptive=classy,age=middle_aged,gender=male,language=en,use_case=conversational
   - VoiceId: hpp4J3VqNfWAUOO0d1Us
-    Description: This voice is warm, bright, and professional, characterized by a Standard American accent and a polished, narrative quality. It features a medium-high pitch with crisp diction and a deliberate, rhythmic pace that makes it highly intelligible and engaging for long-form listening.
+    Description: This voice is warm, bright, and professional, characterized by a
+      Standard American accent and a polished, narrative quality. It features a medium-high
+      pitch with crisp diction and a deliberate, rhythmic pace that makes it highly
+      intelligible and engaging for long-form listening.
     VoiceName: Bella - Professional, Bright, Warm
     Labels: accent=american,descriptive=professional,age=middle_aged,gender=female,language=en,use_case=informative_educational
   - VoiceId: iP95p4xoKVk53GoZ742B
-    Description: Natural and real, this down-to-earth voice is great across many use-cases.
+    Description: Natural and real, this down-to-earth voice is great across many
+      use-cases.
     VoiceName: Chris - Charming, Down-to-Earth
     Labels: accent=american,descriptive=casual,age=middle_aged,gender=male,language=en,use_case=conversational
   - VoiceId: nPczCjzI2devNBz1zQrb
-    Description: Middle-aged man with a resonant and comforting tone. Great for narrations and advertisements.
+    Description: Middle-aged man with a resonant and comforting tone. Great for narrations
+      and advertisements.
     VoiceName: Brian - Deep, Resonant and Comforting
     Labels: accent=american,descriptive=classy,age=middle_aged,gender=male,language=en,use_case=social_media
   - VoiceId: onwK4e9ZLuTAKqWW03F9
-    Description: A strong voice perfect for delivering a professional broadcast or news story.
+    Description: A strong voice perfect for delivering a professional broadcast or
+      news story.
     VoiceName: Daniel - Steady Broadcaster
     Labels: accent=british,descriptive=formal,age=middle_aged,gender=male,language=en,use_case=informative_educational
   - VoiceId: pFZP5JQG7iQjIQuC4Bku
-    Description: Velvety British female voice delivers news and narrations with warmth and clarity.
+    Description: Velvety British female voice delivers news and narrations with warmth
+      and clarity.
     VoiceName: Lily - Velvety Actress
     Labels: accent=british,descriptive=confident,age=middle_aged,gender=female,language=en,use_case=informative_educational
   - VoiceId: pNInz6obpgDQGcFmaJgB
-    Description: A bright tenor pitch that immediately cuts through. The delivery is brash and openly confident, speaking with unwavering certainty and a slightly aggressive self-assurance.
+    Description: A bright tenor pitch that immediately cuts through. The delivery
+      is brash and openly confident, speaking with unwavering certainty and a slightly
+      aggressive self-assurance.
     VoiceName: Adam - Dominant, Firm
     Labels: accent=american,age=middle_aged,language=en,gender=male,use_case=social_media
   - VoiceId: pqHfZKP75CvOlQylNhV4

@@ -66,8 +66,6 @@ MonoBehaviour:
   - Description: A white woman in her thirties with short hair dressed in a superhero
       costume.
     MeshPrefab: {fileID: 919132149155446097, guid: 53927cd2157220c4cb527a5e26156291, type: 3}
-  - Description: A white woman with blue hair in her thirties wearing a space suit.
-    MeshPrefab: {fileID: 919132149155446097, guid: cc6ecc0eda567ab4099a8037041d5809, type: 3}
   DescriptionToAnimation:
   - Description: 'A man who is idle and moves little. '
     AnimationClip: {fileID: -203655887218126122, guid: ccc97f1926a7dd445a478770b452eb01, type: 3}

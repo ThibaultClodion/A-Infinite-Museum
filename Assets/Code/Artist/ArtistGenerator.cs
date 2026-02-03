@@ -16,7 +16,8 @@ public class ArtistGenerator : MonoBehaviour
     [Range(0.5f, 0.95f)]
     [SerializeField] private float _topP = 0.95f;
 
-    private const string c_generated_artist_folder = "NewGeneratedArtists";
+    private const string c_new_generated_artist_folder = "NewGeneratedArtists";
+    private const string c_generated_artist_folder = "GeneratedArtists";
 
     public async Task GenerateAnArtist()
     {
@@ -132,7 +133,7 @@ public class ArtistGenerator : MonoBehaviour
                 { "paintingPrompts", new Schema()
                     {
                         Type = Type.ARRAY,
-                        Description = "A list of 6 prompts that will be used to create and define the artist's paintings.",
+                        Description = "A list of 6 prompts that will be used to generate the paintings (based on the description of the artist).",
                         Items = new Schema() { Type = Type.STRING }
                     }
                 }
@@ -144,10 +145,8 @@ public class ArtistGenerator : MonoBehaviour
 
         GenerateContentResponse response = await client.Models.GenerateContentAsync(
             model: "gemini-3-flash-preview",
-            contents: $"Act as an art historian. Using the physical form of a '{meshDescriptions[Random.Range(0, meshDescriptions.Count)]}', " +
-                          "define a painter with a hyper-specific artistic movement and temperament. " +
-                          "Ensure their voice, animation, and studio colors are a direct manifestation of their creative 'obsession'. " +
-                          "The painting prompts must read like titles from a solo exhibition at a art gallery.",
+            contents: $"Generates a fictional painter with his painting style, painting techniques, and everything that defines his art as a whole. " +
+            $"You will use this mesh: {meshDescriptions[Random.Range(0, meshDescriptions.Count)]} ",
             config: config
         );
 
@@ -162,7 +161,7 @@ public class ArtistGenerator : MonoBehaviour
     public void SaveJSONFile(string jsonContent, ArtistModel artist)
     {
         // Create a safe folder name from the artist name
-        string baseGeneratedArtistsPath = Path.Combine(Application.dataPath, c_generated_artist_folder);
+        string baseGeneratedArtistsPath = Path.Combine(Application.dataPath, c_new_generated_artist_folder);
         string safeFolderName = string.Join("_", artist.Name.Split(Path.GetInvalidFileNameChars()));
         string artistFolderPath = Path.Combine(baseGeneratedArtistsPath, safeFolderName);
 
