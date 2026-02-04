@@ -36,6 +36,7 @@ public class DescriptionVoicePair
     public string Labels;
 }
 
+#if UNITY_EDITOR
 // This class is inspired by the ElevenLabs Unity SDK and use only to fetch voices from ElevenLabs API.
 [CustomEditor(typeof(DescriptionConversionTableSO))]
 public class DescriptionConversionTableEditor : Editor
@@ -249,3 +250,4 @@ public class DescriptionConversionTableEditor : Editor
         return cleaned;
     }
 }
+#endif

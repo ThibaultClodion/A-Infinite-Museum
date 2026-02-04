@@ -24,6 +24,7 @@ public class ArtistSO : ScriptableObject
         }
     }
 
+#if UNITY_EDITOR
     public void RetrieveData()
     {
         // Clear previous data
@@ -69,8 +70,10 @@ public class ArtistSO : ScriptableObject
             AssetDatabase.SaveAssets();
         }
     }
+#endif
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(ArtistSO))]
 public class ArtistSOEditor : Editor
 {
@@ -88,6 +91,7 @@ public class ArtistSOEditor : Editor
         }
     }
 }
+#endif
 
 public class ArtistModel
 {

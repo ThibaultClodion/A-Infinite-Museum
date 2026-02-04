@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.Linq;
 using System.IO;
 
+#if UNITY_EDITOR
 public class ArtistGenerator : MonoBehaviour
 {
     [Header("Generation Parameters")]
@@ -21,7 +22,7 @@ public class ArtistGenerator : MonoBehaviour
 
     public async Task GenerateAnArtist()
     {
-#if UNITY_EDITOR
+
         string apiKey = UnityEditor.EditorPrefs.GetString(ArtistGeneratorEditor.c_apiKeyPrefKey, "");
         
         if (string.IsNullOrWhiteSpace(apiKey))
@@ -31,10 +32,6 @@ public class ArtistGenerator : MonoBehaviour
         }
 
         Client client = new Client(apiKey: apiKey);
-#else
-        Debug.LogError("Artist generation is only available in the Unity Editor.");
-        return;
-#endif
 
         // Configure the content generation parameters
         GenerateContentConfig config = new GenerateContentConfig
@@ -184,9 +181,8 @@ public class ArtistGenerator : MonoBehaviour
 
         Debug.Log($"Artist created, named : {artist.Name}");
 
-#if UNITY_EDITOR
         // Refresh the asset database to show the new file in Unity Editor
         UnityEditor.AssetDatabase.Refresh();
-#endif
     }
 }
+#endif

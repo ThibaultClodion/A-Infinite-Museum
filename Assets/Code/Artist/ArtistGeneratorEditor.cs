@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(ArtistGenerator))]
 public class ArtistGeneratorEditor : Editor
 {
@@ -126,3 +127,4 @@ public class ArtistGeneratorEditor : Editor
         }
     }
 }
+#endif
