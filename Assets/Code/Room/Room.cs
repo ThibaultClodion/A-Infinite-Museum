@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Room : MonoBehaviour
 {
+    [HideInInspector] public UnityEvent OnEnterSurveyRoom;
     private ArtistSO _artistData;
 
     [Header("Room Fondations")]
@@ -55,5 +57,13 @@ public class Room : MonoBehaviour
     {
         // Normalize RGB values from 0-255 to 0-1 range for Unity Color
         return new Color(colorArray[0] / 255f, colorArray[1] / 255f, colorArray[2] / 255f);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name.Contains("Player"))
+        {
+            OnEnterSurveyRoom.Invoke();
+        }
     }
 }

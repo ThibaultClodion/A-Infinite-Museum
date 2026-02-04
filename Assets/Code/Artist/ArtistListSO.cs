@@ -37,8 +37,6 @@ public class ArtistListSO : ScriptableObject
         int index = _unusedIndexes[_unusedIndexes.Count - 1];
         _unusedIndexes.RemoveAt(_unusedIndexes.Count - 1);
 
-        Debug.Log(index);
-
         return _artists[index];
     }
 }
