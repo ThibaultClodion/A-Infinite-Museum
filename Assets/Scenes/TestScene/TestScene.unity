@@ -23,8 +23,8 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientIntensity: 0.5
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -35,7 +35,7 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0.5
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_UseRadianceAmbientProbe: 0
@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 4cc0edfa03cd3fb47a5b86767639e43b, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 40ad8a49b8c5fe04ab2dac06d01e1f5d, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -119,6 +119,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &33659985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 33659986}
+  - component: {fileID: 33659987}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &33659986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33659985}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &33659987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33659985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c6d4c741e51974ebc286ebca6a3091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  _artistList: {fileID: 11400000, guid: 962c70074f9080c4bbf1f281414adec7, type: 2}
+  _rooms:
+  - {fileID: 1991546733}
+  - {fileID: 2011964646}
+  - {fileID: 1112760599}
+  - {fileID: 1305804223}
 --- !u!1 &282170497
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +350,17 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 0079c3ce910c5804db2fcd69eee3f849, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &1112760599 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7853771045313531747, guid: 67f84b50608e701419516651e1991b67, type: 3}
+  m_PrefabInstance: {fileID: 509458870}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3ffc434e35b2f47b5a46170cc80252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomDecoration
 --- !u!1 &1118162927
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +476,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3706263959438641584, guid: 67f84b50608e701419516651e1991b67, type: 3}
   m_PrefabInstance: {fileID: 1305804221}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1305804223 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7853771045313531747, guid: 67f84b50608e701419516651e1991b67, type: 3}
+  m_PrefabInstance: {fileID: 1305804221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3ffc434e35b2f47b5a46170cc80252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomDecoration
 --- !u!1 &1426004631
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,6 +838,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1991546733 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7853771045313531747, guid: 67f84b50608e701419516651e1991b67, type: 3}
+  m_PrefabInstance: {fileID: 8927920125311041132}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3ffc434e35b2f47b5a46170cc80252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomDecoration
 --- !u!1001 &2011964644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -832,6 +915,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3706263959438641584, guid: 67f84b50608e701419516651e1991b67, type: 3}
   m_PrefabInstance: {fileID: 2011964644}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2011964646 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7853771045313531747, guid: 67f84b50608e701419516651e1991b67, type: 3}
+  m_PrefabInstance: {fileID: 2011964644}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3ffc434e35b2f47b5a46170cc80252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomDecoration
 --- !u!1001 &8374040555176910003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -842,7 +936,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2323949567329562158, guid: 6cd29526da1828343bdb977f65d79a49, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.944
+      value: -4.25
       objectReference: {fileID: 0}
     - target: {fileID: 2323949567329562158, guid: 6cd29526da1828343bdb977f65d79a49, type: 3}
       propertyPath: m_LocalPosition.y
@@ -850,7 +944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2323949567329562158, guid: 6cd29526da1828343bdb977f65d79a49, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.603
+      value: -4.42
       objectReference: {fileID: 0}
     - target: {fileID: 2323949567329562158, guid: 6cd29526da1828343bdb977f65d79a49, type: 3}
       propertyPath: m_LocalRotation.w
@@ -953,6 +1047,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 3d27f26bbe265084db4d94d12e3ea798, type: 3}
+    - target: {fileID: 6874430503474563194, guid: 67f84b50608e701419516651e1991b67, type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7046201914106593810, guid: 67f84b50608e701419516651e1991b67, type: 3}
       propertyPath: m_Name
       value: Room (1)
@@ -980,6 +1078,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1850599369}
   - {fileID: 282170499}
+  - {fileID: 33659986}
   - {fileID: 8374040555176910003}
   - {fileID: 1118162929}
   - {fileID: 537155493}
