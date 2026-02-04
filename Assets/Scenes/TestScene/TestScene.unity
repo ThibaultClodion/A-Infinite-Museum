@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c6d4c741e51974ebc286ebca6a3091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  _artistList: {fileID: 11400000, guid: 962c70074f9080c4bbf1f281414adec7, type: 2}
+  _artistList: {fileID: 11400000, guid: c2a225de6e078f9428d3b6de56b6d452, type: 2}
   _rooms:
   - {fileID: 1991546733}
   - {fileID: 2011964646}

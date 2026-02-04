@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArtistListSO : ScriptableObject
 {
     [SerializeField] private ArtistSO[] _artists;
-    [SerializeField] private List<int> _unusedIndexes;
+    private List<int> _unusedIndexes;
 
     public void InitializeIndexes()
     {

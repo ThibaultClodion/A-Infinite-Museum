@@ -142,8 +142,7 @@ public class ArtistGenerator : MonoBehaviour
 
         GenerateContentResponse response = await client.Models.GenerateContentAsync(
             model: "gemini-3-flash-preview",
-            contents: $"Generates a painter with his painting style, painting techniques, and everything that defines his art as a whole " +
-            $"inspired by traditional artist and style. " +
+            contents: $"Generates an original painter with a precise art style based on well known artistic movement. (Don't try to modernize these styles.)" +
             $"You will use this mesh: {meshDescriptions[Random.Range(0, meshDescriptions.Count)]} ",
             config: config
         );
