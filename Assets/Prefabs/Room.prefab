@@ -2438,23 +2438,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3ffc434e35b2f47b5a46170cc80252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomDecoration
-  wallsRenderer:
+  _artistData: {fileID: 0}
+  _wallsRenderer:
   - {fileID: 3470356991436384239}
   - {fileID: 6782104206577263858}
   - {fileID: 7051141849364599692}
   - {fileID: 5966847283576395882}
   - {fileID: 6739566331262212263}
   - {fileID: 8610239107794705560}
-  floorRenderer: {fileID: 8573574835285109420}
-  roofRenderer: {fileID: 2329499772837570814}
-  paintings:
+  _floorRenderer: {fileID: 8573574835285109420}
+  _roofRenderer: {fileID: 2329499772837570814}
+  _paintings:
   - {fileID: 4829414344875857215}
   - {fileID: 8611492614063423035}
   - {fileID: 2853784216337204199}
   - {fileID: 3743080703487661040}
   - {fileID: 4825616025984864479}
   - {fileID: 708899008342910820}
-  lectern: {fileID: 8911854911481828456}
+  _lectern: {fileID: 8911854911481828456}
 --- !u!1 &7079726937245280756
 GameObject:
   m_ObjectHideFlags: 0

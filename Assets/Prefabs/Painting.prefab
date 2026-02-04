@@ -568,11 +568,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a93a6f70fd69949bb8f7a46d68fd2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Painting
-  paintingImage: {fileID: 5237552368179133629}
-  frameRenderer: {fileID: 6927515526096765642}
-  informationFrameRenderer: {fileID: 3153826747560306620}
-  informationText: {fileID: 2720960149349141124}
-  artistNameText: {fileID: 1680995755701845678}
+  _paintingImage: {fileID: 5237552368179133629}
+  _frameRenderer: {fileID: 6927515526096765642}
+  PromptUsed: 
+  _informationFrameRenderer: {fileID: 3153826747560306620}
+  _informationText: {fileID: 2720960149349141124}
+  _artistNameText: {fileID: 1680995755701845678}
 --- !u!1 &6210816014576150798
 GameObject:
   m_ObjectHideFlags: 0

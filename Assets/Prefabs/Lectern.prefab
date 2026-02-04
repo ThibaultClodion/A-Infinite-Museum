@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa20d89f06c092b48a15cf8b18b6f1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lectern
-  artistDescriptionText: {fileID: 513835328594132783}
-  artistNameText: {fileID: 568280055041585031}
+  _artistDescriptionText: {fileID: 513835328594132783}
+  _artistNameText: {fileID: 568280055041585031}
 --- !u!1 &6002829549179967350
 GameObject:
   m_ObjectHideFlags: 0

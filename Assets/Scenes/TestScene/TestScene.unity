@@ -957,6 +957,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7853771045313531747, guid: 67f84b50608e701419516651e1991b67, type: 3}
+      propertyPath: _artistData
+      value: 
+      objectReference: {fileID: 11400000, guid: dcc49dcbb7ee94a44af00b9b75ea8e5e, type: 2}
     - target: {fileID: 7951145898853861395, guid: 67f84b50608e701419516651e1991b67, type: 3}
       propertyPath: m_Sprite
       value: 

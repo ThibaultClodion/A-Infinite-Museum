@@ -14,7 +14,7 @@ public class Painting : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _informationText;
     [SerializeField] private TextMeshProUGUI _artistNameText;
 
-    public void ChangePainting(Sprite sprite, Color frameColor)
+    public void ChangeSpriteAndFrame(Sprite sprite, Color frameColor)
     {
         _paintingImage.sprite = sprite;
         _frameRenderer.material.color = frameColor;

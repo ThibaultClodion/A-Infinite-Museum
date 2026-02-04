@@ -11,14 +11,25 @@ public class ArtistSO : ScriptableObject
     public TextAsset Json;
     public List<Sprite> Paintings = new List<Sprite>();
 
-    [HideInInspector] public ArtistModel ArtistModel;
+    private ArtistModel _artistModel;
+    public ArtistModel ArtistModel
+    {
+        get
+        {
+            if (_artistModel == null && Json != null)
+            {
+                _artistModel = JsonSerializer.Deserialize<ArtistModel>(Json.text);
+            }
+            return _artistModel;
+        }
+    }
 
     public void RetrieveData()
     {
         // Clear previous data
         Json = null;
         Paintings.Clear();
-        ArtistModel = null;
+        _artistModel = null;
 
         // Get actual directory of the ScriptableObject
         string assetPath = AssetDatabase.GetAssetPath(this);
@@ -43,14 +54,14 @@ public class ArtistSO : ScriptableObject
 
         if (Json != null)
         {
-            ArtistModel = JsonSerializer.Deserialize<ArtistModel>(Json.text);
+            _artistModel = JsonSerializer.Deserialize<ArtistModel>(Json.text);
 
             // Mark the asset as dirty and save BEFORE renaming
             EditorUtility.SetDirty(this);
             AssetDatabase.SaveAssets();
 
             // Change filename to artist name
-            string safeName = string.Join("_", ArtistModel.Name.Split(System.IO.Path.GetInvalidFileNameChars()));
+            string safeName = string.Join("_", _artistModel.Name.Split(System.IO.Path.GetInvalidFileNameChars()));
             string newAssetPath = System.IO.Path.Combine(directoryPath, safeName + ".asset");
 
             // Rename the asset

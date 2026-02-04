@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
+    private ArtistSO _artistData;
+
     [Header("Room Fondations")]
     [SerializeField] private List<Renderer> _wallsRenderer;
     [SerializeField] private Renderer _floorRenderer;
@@ -14,13 +16,44 @@ public class Room : MonoBehaviour
     [Header("Lectern")]
     [SerializeField] private Lectern _lectern;
 
-    void Start()
+    public void AdaptRoomToNewArtist(ArtistSO artistData)
     {
-        /*foreach (var wallRenderer in wallsRenderer)
+        _artistData = artistData;
+
+        // Change walls color
+        Color wallColor = ArrayToColor(_artistData.ArtistModel.WallsColor);
+        foreach (Renderer renderer in _wallsRenderer)
         {
-            wallRenderer.material.color = Color.blue;
+            renderer.material.color = wallColor;
         }
-        floorRenderer.material.color = Color.green;
-        roofRenderer.material.color = Color.gray;*/
+
+        _floorRenderer.material.color = ArrayToColor(_artistData.ArtistModel.FloorColor);
+        _roofRenderer.material.color = ArrayToColor(_artistData.ArtistModel.RoofColor);
+
+        UpdatePaintings(_artistData.Paintings);
+        UpdateLectern(_artistData.ArtistModel.Description, _artistData.ArtistModel.Name);
+    }
+
+    private void UpdatePaintings(List<Sprite> sprites)
+    {
+        Color frameColor = ArrayToColor(_artistData.ArtistModel.FrameColor);
+        Color informationFrameColor = ArrayToColor(_artistData.ArtistModel.FrameInformationColor);
+
+        for(int i = 0; i < sprites.Count && i < _paintings.Count; i++)
+        {
+            _paintings[i].ChangeSpriteAndFrame(sprites[i], frameColor);
+            _paintings[i].ChangeInformation(informationFrameColor, _artistData.ArtistModel.PaintingPrompts[i], _artistData.ArtistModel.Name);
+        }
+    }
+
+    private void UpdateLectern(string artistDescription, string artistName)
+    {
+        _lectern.DefineArtistDescription(artistDescription, artistName);
+    }
+
+    private Color ArrayToColor(int[] colorArray)
+    {
+        // Normalize RGB values from 0-255 to 0-1 range for Unity Color
+        return new Color(colorArray[0] / 255f, colorArray[1] / 255f, colorArray[2] / 255f);
     }
 }
