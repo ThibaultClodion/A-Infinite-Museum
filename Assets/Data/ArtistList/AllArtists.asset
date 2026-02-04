@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc492e4af4bd21c49b3364b8ed44e7a0, type: 3}
+  m_Name: AllArtists
+  m_EditorClassIdentifier: Assembly-CSharp::ArtistListSO
+  _artists:
+  - {fileID: 11400000, guid: 0ae38370e9d0b9c4691d71956d1e11c3, type: 2}
+  - {fileID: 11400000, guid: 9c1f7b6363204e9469f49d283b25046c, type: 2}
+  - {fileID: 11400000, guid: b05e23151e535424c8c8ccafb95aaef6, type: 2}
+  - {fileID: 11400000, guid: 728c685f2c2f5b0439f4a7785bd81068, type: 2}
+  - {fileID: 11400000, guid: 5d65e597deb789843a724ced5007c696, type: 2}
+  - {fileID: 11400000, guid: dd6e48e75ca9e9c44b18649e99fdcb56, type: 2}
+  - {fileID: 11400000, guid: 42d473d64e920974aae842ede950e815, type: 2}
+  - {fileID: 11400000, guid: 5da374ae927dcd448b672ecaabac7eff, type: 2}
+  - {fileID: 11400000, guid: c1723cc360ca93f4cbfb917d1105906e, type: 2}
+  _usedIndexes: 
