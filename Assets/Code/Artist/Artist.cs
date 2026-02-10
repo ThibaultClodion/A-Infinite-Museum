@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Meta.XR.BuildingBlocks.AIBlocks;
 
 public class Artist : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Artist : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private RuntimeAnimatorController _animatorController;
+    [SerializeField] private AIProviderBase _textToSpeechAsset;
+    [SerializeField] private TextToSpeechAgent _textToSpeech;
     private ArtistSO _artistSO;
     private Animator _animator;
     private AnimationClip _animationClip;
@@ -19,6 +22,7 @@ public class Artist : MonoBehaviour
 
         InitializeMesh();
         InitializeAnimation();
+        InitializeVoice();
 
         // Change position and rotation
         transform.position = spawnTransform.position;
@@ -56,5 +60,20 @@ public class Artist : MonoBehaviour
 
         _animator.runtimeAnimatorController = _animatorController;
         _animator.Play(_animationClip.name);
+    }
+
+    private void InitializeVoice()
+    {
+        foreach (DescriptionVoicePair voicePair in _allDescriptionConversionTable.DescriptionToVoice)
+        {
+            if (_artistSO.ArtistModel.VoiceDescription.Contains(voicePair.Description))
+            {
+                if (_textToSpeechAsset is ElevenLabsProvider elevenLabs)
+                {
+                    elevenLabs.SetVoice(voicePair.VoiceId);
+                }
+                break;
+            }
+        }
     }
 }
