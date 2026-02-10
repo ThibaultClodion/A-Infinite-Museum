@@ -709,8 +709,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a2e756b18e1b2418982d3f6a228f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DetectSpeech
+  OnPlayerSpoke:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Artist, Assembly-CSharp
+        m_MethodName: RespondToPlayer
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _speechToText: {fileID: 8093022023052844660}
   _minSpeechVolume: 0.08
+  _disableSpeech: 1
 --- !u!1 &5817089037887154320
 GameObject:
   m_ObjectHideFlags: 0

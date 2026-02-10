@@ -8,14 +8,27 @@ public class Artist : MonoBehaviour
     [Header("General Data")]
     [SerializeField] private DescriptionConversionTableSO _allDescriptionConversionTable;
 
-    [Header("Components")]
-    [SerializeField] private RuntimeAnimatorController _animatorController;
+    [Header("Speech Parameters")]
+    [SerializeField] private DetectSpeech _playerSpeechDetection;
     [SerializeField] private AIProviderBase _textToSpeechAsset;
     [SerializeField] private TextToSpeechAgent _textToSpeech;
+
+    [Header("Components")]
+    [SerializeField] private RuntimeAnimatorController _animatorController;
     private ArtistSO _artistSO;
     private Animator _animator;
     private AnimationClip _animationClip;
     private GameObject _lastMesh;
+
+    private void Start()
+    {
+        _playerSpeechDetection.OnPlayerSpoke.AddListener(RespondToPlayer);
+    }
+
+    private void OnDestroy()
+    {
+        _playerSpeechDetection.OnPlayerSpoke.RemoveListener(RespondToPlayer);
+    }
 
     public void InitializeArtist(ArtistSO artistSO, Transform spawnTransform)
     {
@@ -65,6 +78,9 @@ public class Artist : MonoBehaviour
 
     private void InitializeVoice()
     {
+        // In case the artist was still talking.
+        _textToSpeech.StopSpeaking();
+
         foreach (DescriptionVoicePair voicePair in _allDescriptionConversionTable.DescriptionToVoice)
         {
             if (_artistSO.ArtistModel.VoiceDescription.Contains(voicePair.Description))
@@ -78,7 +94,7 @@ public class Artist : MonoBehaviour
         }
     }
 
-    private async void RespondToPlayer(string playerSpeech)
+    public async void RespondToPlayer(string playerSpeech)
     {
         string apiKey = UnityEditor.EditorPrefs.GetString(ArtistGeneratorEditor.c_apiKeyPrefKey, "");
 
@@ -93,7 +109,7 @@ public class Artist : MonoBehaviour
         GenerateContentResponse response = await client.Models.GenerateContentAsync(
             model: "gemini-2.5-flash-lite",
             contents: $"You are {_artistSO.ArtistModel.Name}, an artist who describe himself as a {_artistSO.ArtistModel.Description}." +
-            $"Respond to a visitor who sayed : {playerSpeech} without being too long like in a normal conversation.");
+            $"Respond without being too long like in a normal conversation to a visitor who sayed : {playerSpeech}");
 
         _textToSpeech.SpeakText(response.Candidates[0].Content.Parts[0].Text);
     }

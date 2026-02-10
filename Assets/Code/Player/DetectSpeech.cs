@@ -1,10 +1,16 @@
 using Meta.XR.BuildingBlocks.AIBlocks;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DetectSpeech : MonoBehaviour
 {
+    [HideInInspector] public UnityEvent<string> OnPlayerSpoke = new UnityEvent<string>();
+
+    [Header("Speech Settings")]
     [SerializeField] private SpeechToTextAgent _speechToText;
     [SerializeField] private float _minSpeechVolume = 0.01f;
+    [Tooltip("Use to save some API Calls")]
+    [SerializeField] private bool _disableSpeech;
 
     private AudioClip _microphoneClip;
     private string _microphoneName;
@@ -12,6 +18,10 @@ public class DetectSpeech : MonoBehaviour
 
     private void Start()
     {
+        if (_disableSpeech)
+        {
+            return;
+        }
         if (Microphone.devices.Length == 0)
         {
             Debug.LogError("No microphone detected!");
@@ -33,11 +43,25 @@ public class DetectSpeech : MonoBehaviour
         }
     }
 
-    public void EndSpeech(string test)
+    private void OnDestroy()
+    {
+        // Stop the microphone when the object is destroyed
+        if (Microphone.devices.Length > 0)
+        {
+            Microphone.End(_microphoneName);
+        }
+    }
+
+    public void EndSpeech(string speechText)
     {
         // Speech To Text Agent hold the microphone (because it also start it) but DetectSpeech need it again after the end of transcript.
         _speechToText.onTranscript.RemoveListener(EndSpeech);
         _microphoneClip = Microphone.Start(_microphoneName, true, 20, AudioSettings.outputSampleRate);
+
+        if(!string.IsNullOrEmpty(speechText))
+        {
+            OnPlayerSpoke.Invoke(speechText);
+        }
     }
 
     public float GetMicrophoneVolume()
@@ -71,14 +95,5 @@ public class DetectSpeech : MonoBehaviour
         // rmsValue is typically between 0.0 and 1.0 (can go higher if very loud).
         float rmsValue = Mathf.Sqrt(sum / c_sampleWindow);
         return rmsValue;
-    }
-
-    private void OnDestroy()
-    {
-        // Stop the microphone when the object is destroyed
-        if (Microphone.devices.Length > 0)
-        {
-            Microphone.End(_microphoneName);
-        }
     }
 }

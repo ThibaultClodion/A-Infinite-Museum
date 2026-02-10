@@ -529,6 +529,17 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 0079c3ce910c5804db2fcd69eee3f849, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &1109350026 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4539937724107034331, guid: 6cd29526da1828343bdb977f65d79a49, type: 3}
+  m_PrefabInstance: {fileID: 8374040555176910003}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a2e756b18e1b2418982d3f6a228f5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DetectSpeech
 --- !u!114 &1112760599 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7853771045313531747, guid: 67f84b50608e701419516651e1991b67, type: 3}
@@ -868,9 +879,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Artist
   _allDescriptionConversionTable: {fileID: 11400000, guid: fd219d69071d8dc43884acfe4903809a, type: 2}
-  _animatorController: {fileID: 9100000, guid: d71747de13f6f4846a324b4dc30d79e8, type: 2}
+  _playerSpeechDetection: {fileID: 1109350026}
   _textToSpeechAsset: {fileID: 11400000, guid: 3e7152f8cf3682445acc9cce730fabb6, type: 2}
   _textToSpeech: {fileID: 42057676}
+  _animatorController: {fileID: 9100000, guid: d71747de13f6f4846a324b4dc30d79e8, type: 2}
 --- !u!4 &2106955642
 Transform:
   m_ObjectHideFlags: 0
@@ -935,6 +947,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4539937724107034331, guid: 6cd29526da1828343bdb977f65d79a49, type: 3}
+      propertyPath: OnPlayerSpoke.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2106955641}
     - target: {fileID: 4926939082740352243, guid: 6cd29526da1828343bdb977f65d79a49, type: 3}
       propertyPath: m_Name
       value: Player
