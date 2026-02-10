@@ -1,6 +1,7 @@
 using UnityEngine;
-using System.Collections;
 using Meta.XR.BuildingBlocks.AIBlocks;
+using Google.GenAI;
+using Google.GenAI.Types;
 
 public class Artist : MonoBehaviour
 {
@@ -75,5 +76,25 @@ public class Artist : MonoBehaviour
                 break;
             }
         }
+    }
+
+    private async void RespondToPlayer(string playerSpeech)
+    {
+        string apiKey = UnityEditor.EditorPrefs.GetString(ArtistGeneratorEditor.c_apiKeyPrefKey, "");
+
+        if (string.IsNullOrWhiteSpace(apiKey))
+        {
+            Debug.LogError("Gemini API Key is not set. Please configure it in the Inspector.");
+            return;
+        }
+
+        Client client = new Client(apiKey: apiKey);
+
+        GenerateContentResponse response = await client.Models.GenerateContentAsync(
+            model: "gemini-2.5-flash-lite",
+            contents: $"You are {_artistSO.ArtistModel.Name}, an artist who describe himself as a {_artistSO.ArtistModel.Description}." +
+            $"Respond to a visitor who sayed : {playerSpeech} without being too long like in a normal conversation.");
+
+        _textToSpeech.SpeakText(response.Candidates[0].Content.Parts[0].Text);
     }
 }
