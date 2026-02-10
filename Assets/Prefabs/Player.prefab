@@ -671,6 +671,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2323949567329562158}
+  - component: {fileID: 4539937724107034331}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -693,8 +694,23 @@ Transform:
   m_Children:
   - {fileID: 4641295695231995749}
   - {fileID: 5240677859320260834}
+  - {fileID: 4483813999676967257}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4539937724107034331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4926939082740352243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a2e756b18e1b2418982d3f6a228f5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DetectSpeech
+  _speechToText: {fileID: 8093022023052844660}
+  _minSpeechVolume: 0.08
 --- !u!1 &5817089037887154320
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +887,95 @@ MonoBehaviour:
   - <Keyboard>/leftAlt
   - <Keyboard>/rightAlt
   - <Keyboard>/f2
+--- !u!1 &7244882890268673548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4483813999676967257}
+  - component: {fileID: 2514710464335875310}
+  - component: {fileID: 8093022023052844660}
+  m_Layer: 0
+  m_Name: '[BuildingBlock] Speech To Text'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4483813999676967257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7244882890268673548}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.25, y: 0, z: 4.42}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2323949567329562158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2514710464335875310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7244882890268673548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
+  blockId: b246d3bb-3f91-4efe-893c-c4c2d0de7210
+  instanceId: 62f5950f-9078-451f-89d9-42ce90293a16
+  version: 1
+  installationRoutineCheckpoint:
+    _installationRoutineId: 23952c08-05e9-48de-b271-fadf8448828c
+    _installationVariants:
+    - _memberName: inferenceType
+      _value: '{"value__":1}'
+    - _memberName: modelProvider
+      _value: ElevenLabs - scribe_v1
+--- !u!114 &8093022023052844660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7244882890268673548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebafe374ff6848bb9b28beabd283b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  providerAsset: {fileID: 11400000, guid: d522d8d080292784ba37bd41a39754ef, type: 2}
+  deviceName: 
+  sampleRate: 16000
+  channels: 1
+  rmsWindowSeconds: 0.02
+  vadStartThresholdDb: 14
+  vadStopThresholdDb: 8
+  maxSilenceSeconds: 0.8
+  minSpeechSeconds: 0.25
+  endPadSeconds: 0.06
+  envelopeAttackSeconds: 0.02
+  envelopeReleaseSeconds: 0.1
+  noiseWindowSeconds: 1.5
+  noisePercentile: 0.2
+  quietMarginDb: 1
+  maxDurationSeconds: 20
+  prePadSeconds: 0.35
+  manualStopOnly: 0
+  onTranscript:
+    m_PersistentCalls:
+      m_Calls: []
+  lastTranscript: 
 --- !u!1 &7546635611286943289
 GameObject:
   m_ObjectHideFlags: 0
