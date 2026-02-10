@@ -163,12 +163,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c6d4c741e51974ebc286ebca6a3091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  _artistList: {fileID: 11400000, guid: c2a225de6e078f9428d3b6de56b6d452, type: 2}
   _rooms:
   - {fileID: 1991546733}
   - {fileID: 2011964646}
   - {fileID: 1112760599}
   - {fileID: 1305804223}
+  _artistList: {fileID: 11400000, guid: c2a225de6e078f9428d3b6de56b6d452, type: 2}
+  _artist: {fileID: 2106955641}
 --- !u!1 &282170497
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +927,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3ffc434e35b2f47b5a46170cc80252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomDecoration
+--- !u!1 &2106955640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2106955642}
+  - component: {fileID: 2106955641}
+  m_Layer: 0
+  m_Name: Artist
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2106955641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106955640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ef34e657e8ead419c78e252521cf7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Artist
+  _allDescriptionConversionTable: {fileID: 11400000, guid: fd219d69071d8dc43884acfe4903809a, type: 2}
+  _animatorController: {fileID: 9100000, guid: d71747de13f6f4846a324b4dc30d79e8, type: 2}
+--- !u!4 &2106955642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106955640}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8374040555176910003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1082,5 +1129,6 @@ SceneRoots:
   - {fileID: 8374040555176910003}
   - {fileID: 1118162929}
   - {fileID: 537155493}
+  - {fileID: 2106955642}
   - {fileID: 1426004635}
   - {fileID: 1938217981}

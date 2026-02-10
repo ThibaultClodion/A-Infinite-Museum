@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Artists Parameters")]
-    [SerializeField] private ArtistListSO _artistList;
-
     [Header("Room Parameters")]
     [SerializeField] private Room[] _rooms;
     private int _actualRoomIndex = 0;
+
+    [Header("Artist Parameters")]
+    [SerializeField] private ArtistListSO _artistList;
+    [SerializeField] private Artist _artist;
 
     private void Awake()
     {
@@ -38,5 +39,6 @@ public class GameManager : MonoBehaviour
         ArtistSO randomArtist = _artistList.GetRandomArtist();
 
         _rooms[index].AdaptRoomToNewArtist(randomArtist);
+        _artist.InitializeArtist(randomArtist, _rooms[index].GetRandomArtistPosition());
     }
 }

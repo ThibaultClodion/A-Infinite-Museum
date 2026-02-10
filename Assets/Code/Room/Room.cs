@@ -18,6 +18,9 @@ public class Room : MonoBehaviour
     [Header("Lectern")]
     [SerializeField] private Lectern _lectern;
 
+    [Header("Artist")]
+    [SerializeField] private List<Transform> _artistPositions;
+
     public void AdaptRoomToNewArtist(ArtistSO artistData)
     {
         _artistData = artistData;
@@ -34,6 +37,11 @@ public class Room : MonoBehaviour
 
         UpdatePaintings(_artistData.Paintings);
         UpdateLectern(_artistData.ArtistModel.Description, _artistData.ArtistModel.Name);
+    }
+
+    public Transform GetRandomArtistPosition()
+    {
+        return _artistPositions[Random.Range(0, _artistPositions.Count)];
     }
 
     private void UpdatePaintings(List<Sprite> sprites)
