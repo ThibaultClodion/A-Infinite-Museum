@@ -8,9 +8,9 @@ public class DetectSpeech : MonoBehaviour
 
     [Header("Speech Settings")]
     [SerializeField] private SpeechToTextAgent _speechToText;
-    [SerializeField] private float _minSpeechVolume = 0.01f;
-    [Tooltip("Use to save some API Calls")]
-    [SerializeField] private bool _disableSpeech;
+    [SerializeField] private float _minSpeechVolume = 0.08f;
+    [Tooltip("Use to save API Calls")] [SerializeField] private bool _disableAPICalls = true;
+    private bool _isListening = true;
 
     private AudioClip _microphoneClip;
     private string _microphoneName;
@@ -18,7 +18,7 @@ public class DetectSpeech : MonoBehaviour
 
     private void Start()
     {
-        if (_disableSpeech)
+        if (_disableAPICalls)
         {
             return;
         }
@@ -34,10 +34,13 @@ public class DetectSpeech : MonoBehaviour
 
     private void Update()
     {
-        float volume = GetMicrophoneVolume();
-        
-        if (volume > _minSpeechVolume)
+        if(_disableAPICalls || !_isListening)
         {
+            return;
+        }
+        else if (GetMicrophoneVolume() > _minSpeechVolume)
+        {
+            _isListening = false;
             _speechToText.StartListening();
             _speechToText.onTranscript.AddListener(EndSpeech);
         }
@@ -57,11 +60,9 @@ public class DetectSpeech : MonoBehaviour
         // Speech To Text Agent hold the microphone (because it also start it) but DetectSpeech need it again after the end of transcript.
         _speechToText.onTranscript.RemoveListener(EndSpeech);
         _microphoneClip = Microphone.Start(_microphoneName, true, 20, AudioSettings.outputSampleRate);
+        _isListening = true;
 
-        if(!string.IsNullOrEmpty(speechText))
-        {
-            OnPlayerSpoke.Invoke(speechText);
-        }
+        OnPlayerSpoke.Invoke(speechText);
     }
 
     public float GetMicrophoneVolume()

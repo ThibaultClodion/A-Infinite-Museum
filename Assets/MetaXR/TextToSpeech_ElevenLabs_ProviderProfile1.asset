@@ -17,5 +17,5 @@ MonoBehaviour:
   endpoint: https://api.elevenlabs.io
   model: eleven_flash_v2_5
   voiceId: EXAVITQu4vr4xnSDxMaL
-  sttLanguage: 
+  sttLanguage: en
   sttIncludeAudioEvents: 0

@@ -17,5 +17,5 @@ MonoBehaviour:
   endpoint: https://api.elevenlabs.io
   model: scribe_v1
   voiceId: 21m00Tcm4TlvDq8ikWAM
-  sttLanguage: 
+  sttLanguage: en
   sttIncludeAudioEvents: 0
