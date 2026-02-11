@@ -18,10 +18,6 @@ public class DetectSpeech : MonoBehaviour
 
     private void Start()
     {
-        if (_disableAPICalls)
-        {
-            return;
-        }
         if (Microphone.devices.Length == 0)
         {
             Debug.LogError("No microphone detected!");
