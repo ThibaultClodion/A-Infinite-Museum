@@ -116,7 +116,7 @@ public class Artist : MonoBehaviour
         Client client = new Client(apiKey: apiKey);
 
         string contentToGenerate = $"You are {_artistSO.ArtistModel.Name}, an artist who describe himself as a {_artistSO.ArtistModel.Description}." +
-            $"Respond without being too long (like in a normal conversation) to a visitor who sayed : {playerSpeech}";
+            $"Respond quickly (like in a normal conversation) to a visitor of your museum exposition who sayed : {playerSpeech}";
 
         Painting playerLookingPainting = _playerLook.GetLookingPainting();
         if (playerLookingPainting != null)
