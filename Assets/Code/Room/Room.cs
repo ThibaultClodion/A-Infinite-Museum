@@ -13,6 +13,9 @@ public class Room : MonoBehaviour
     [SerializeField] private Renderer _roofRenderer;
 
     [Header("Paintings")]
+    [SerializeField] private Survey _survey;
+
+    [Header("Paintings")]
     [SerializeField] private List<Painting> _paintings;
 
     [Header("Lectern")]
@@ -24,6 +27,7 @@ public class Room : MonoBehaviour
     public void AdaptRoomToNewArtist(ArtistSO artistData)
     {
         _artistData = artistData;
+        _survey.InitializeSurvey(_artistData);
 
         // Change walls color
         Color wallColor = ArrayToColor(_artistData.ArtistModel.WallsColor);
