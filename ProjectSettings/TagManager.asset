@@ -3,7 +3,26 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - QDSUIBackplateGradient
+  - QDSUIAccentColor
+  - QDSUIIcon
+  - QDSUIToggleButton
+  - QDSUISharedThemeColor
+  - QDSUISecondaryButton
+  - QDSUIBorderlessButton
+  - QDSUIPrimaryButton
+  - QDSUIDestructiveButton
+  - QDSUIToggleCheckboxRadio
+  - QDSUITextInputField
+  - QDSUISection
+  - QDSUIToggleSwitch
+  - QDSUITextInvertedColor
+  - QDSUITooltip
+  - QDSUITextSecondaryInvertedColor
+  - QDSUIToggleBorderlessButton
+  - QDSUITextSecondaryColor
+  - Validated
   layers:
   - Default
   - TransparentFX
