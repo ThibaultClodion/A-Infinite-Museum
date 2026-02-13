@@ -13,13 +13,18 @@ public class Survey : MonoBehaviour
         "Did the artist seem to own the work and explain it convincingly ?" + c_surveyColumnSeparator +
         "How would you rate this artist overall ?";
 
-    private string _actualSurveyLine;
-    private string _wordToDescribeRoom;
-    private int[] _likertResponses = new int[4];
+    private string _actualSurveyLine = string.Empty;
+    private string _wordToDescribeRoom = string.Empty;
+    private string[] _likertResponses = new string[4];
 
     public void InitializeSurvey(ArtistSO artist)
     {
         CreateFileIfNecessary();
+
+        for (int i = 0; i < _likertResponses.Length; i++)
+        {
+            _likertResponses[i] = string.Empty;
+        }
 
         _actualSurveyLine = artist.ArtistModel.Name + c_surveyColumnSeparator;
     }
@@ -29,18 +34,42 @@ public class Survey : MonoBehaviour
         _wordToDescribeRoom = newWord;
     }
 
-    public void ChangeLikertResponse(int index, int newValue)
+    private void ChangeLikertResponse(int index, string newValue)
     {
         _likertResponses[index] = newValue;
     }
 
-    public void AddLineToSurvey()
+    public void ChangeLikertResponse0(string newValue) => ChangeLikertResponse(0, newValue);
+    public void ChangeLikertResponse1(string newValue) => ChangeLikertResponse(1, newValue);
+    public void ChangeLikertResponse2(string newValue) => ChangeLikertResponse(2, newValue);
+    public void ChangeLikertResponse3(string newValue) => ChangeLikertResponse(3, newValue);
+
+    public bool SubmitSurvey()
+    {
+        if(string.IsNullOrEmpty(_wordToDescribeRoom))
+        {
+            return false;
+        }
+        foreach (string response in _likertResponses)
+        {
+            if (string.IsNullOrEmpty(response))
+            {
+                return false;
+            }
+        }
+
+        AddLineToSurvey();
+
+        return true;
+    }
+
+    private void AddLineToSurvey()
     {
         _actualSurveyLine += _wordToDescribeRoom + c_surveyColumnSeparator;
 
-        foreach (int response in _likertResponses)
+        foreach (string response in _likertResponses)
         {
-            _actualSurveyLine += response.ToString() + c_surveyColumnSeparator;
+            _actualSurveyLine += response + c_surveyColumnSeparator;
         }
 
         // Remove the last separator
@@ -56,7 +85,6 @@ public class Survey : MonoBehaviour
         if (!Directory.Exists(c_surveyFolder))
         {
             Directory.CreateDirectory(c_surveyFolder);
-            Debug.Log($"Created directory: {c_surveyFolder}");
         }
 
         string filePath = c_surveyFolder + c_surveyFileName;
@@ -65,7 +93,6 @@ public class Survey : MonoBehaviour
         if (!File.Exists(filePath))
         {
             File.WriteAllText(filePath, c_headerLine + "\n");
-            Debug.Log($"Created survey file: {filePath}");
         }
     }
 }
