@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc492e4af4bd21c49b3364b8ed44e7a0, type: 3}
+  m_Name: DemoNoRandomize
+  m_EditorClassIdentifier: Assembly-CSharp::ArtistListSO
+  _artists:
+  - {fileID: 11400000, guid: f90276a017bd4764f9929d3eace0066f, type: 2}
+  - {fileID: 11400000, guid: 8578ba0896649a740aab0b647b108356, type: 2}
+  - {fileID: 11400000, guid: b14881a67924d214bbc24d03967853b8, type: 2}
+  - {fileID: 11400000, guid: 5bbe5cda91d7ef7479f447efe51d340b, type: 2}
+  _isRandomized: 0

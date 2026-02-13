@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     private void GenerateARoom(int index)
     {
-        ArtistSO randomArtist = _artistList.GetRandomArtist();
+        ArtistSO randomArtist = _artistList.GetNextArtist();
 
         _rooms[index].AdaptRoomToNewArtist(randomArtist);
         _artist.InitializeArtist(randomArtist, _rooms[index].GetRandomArtistPosition());

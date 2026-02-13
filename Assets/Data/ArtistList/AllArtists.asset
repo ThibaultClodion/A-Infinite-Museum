@@ -54,3 +54,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b9439e5f9a9b9504095fc9557b65e5f7, type: 2}
   - {fileID: 11400000, guid: 15dc54614fd647b41945eefea6d40bd3, type: 2}
   - {fileID: 11400000, guid: 5bbe5cda91d7ef7479f447efe51d340b, type: 2}
+  _isRandomized: 1

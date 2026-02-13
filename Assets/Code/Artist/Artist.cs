@@ -27,11 +27,31 @@ public class Artist : MonoBehaviour
     private void Start()
     {
         _playerSpeechDetection.OnPlayerSpoke.AddListener(RespondToPlayer);
+        
+        // Subscribe to TTS events to control speech detection
+        _textToSpeech.onSpeakStarting.AddListener(OnArtistStartedSpeaking);
+        _textToSpeech.onSpeakFinished.AddListener(OnArtistFinishedSpeaking);
     }
 
     private void OnDestroy()
     {
         _playerSpeechDetection.OnPlayerSpoke.RemoveListener(RespondToPlayer);
+        
+        // Unsubscribe from TTS events
+        _textToSpeech.onSpeakStarting.RemoveListener(OnArtistStartedSpeaking);
+        _textToSpeech.onSpeakFinished.RemoveListener(OnArtistFinishedSpeaking);
+    }
+
+    private void OnArtistStartedSpeaking(string text)
+    {
+        // Stop listening while the artist is speaking to prevent picking up artist's voice
+        _playerSpeechDetection.StopListening();
+    }
+
+    private void OnArtistFinishedSpeaking()
+    {
+        // Resume listening after the artist finishes speaking
+        _playerSpeechDetection.StartListening();
     }
 
     public void InitializeArtist(ArtistSO artistSO, Transform spawnTransform)
@@ -116,16 +136,17 @@ public class Artist : MonoBehaviour
         Client client = new Client(apiKey: apiKey);
 
         string contentToGenerate = $"You are {_artistSO.ArtistModel.Name}, an artist who describe himself as a {_artistSO.ArtistModel.Description}." +
-            $"Respond quickly (like in a normal conversation) to a visitor of your museum exposition who sayed : {playerSpeech}";
+            $"\n A visitor of your museum exposition sayed : {playerSpeech}";
 
         Painting playerLookingPainting = _playerLook.GetLookingPainting();
         if (playerLookingPainting != null)
         {
-            contentToGenerate += $" Also, the visitor is looking at a painting that you made, which is described as {playerLookingPainting.PromptUsed}, he may talk about it (if not ignore it)";
+            contentToGenerate += $"\n The visitor is looking at a painting that you made, which is described as {playerLookingPainting.PromptUsed}";
         }
 
+        contentToGenerate += "\n Answer to the visitor in a short and concise way, if he talk about the painting use it in your answer, if not just answer to his comment or question.";
 
-        if(!_disableAPICalls)
+        if (!_disableAPICalls)
         {
             GenerateContentResponse response = await client.Models.GenerateContentAsync(
                 model: "gemini-2.5-flash-lite",

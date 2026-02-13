@@ -5,18 +5,25 @@ using UnityEngine;
 public class ArtistListSO : ScriptableObject
 {
     [SerializeField] private ArtistSO[] _artists;
+    [SerializeField] private bool _isRandomized;
     private List<int> _unusedIndexes;
 
     public void InitializeIndexes()
     {
-        // Initialize the indexes
         _unusedIndexes = new List<int>();
         for (int i = 0; i < _artists.Length; i++)
         {
             _unusedIndexes.Add(i);
         }
 
-        // Shuffle the indexes
+        if(_isRandomized)
+        {
+            ShuffleIndexes();
+        }
+    }
+
+    public void ShuffleIndexes()
+    {
         int length = _unusedIndexes.Count;
         for (int i = 0; i < length - 1; i++)
         {
@@ -27,7 +34,7 @@ public class ArtistListSO : ScriptableObject
         }
     }
 
-    public ArtistSO GetRandomArtist()
+    public ArtistSO GetNextArtist()
     {
         if(_unusedIndexes.Count == 0)
         {

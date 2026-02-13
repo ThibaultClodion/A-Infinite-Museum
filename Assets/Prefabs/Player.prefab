@@ -726,7 +726,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _appDictationExperience: {fileID: 2011966825573131763}
-  _restartDelay: 1
+  _restartDelay: 2
 --- !u!114 &8070014038403927961
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -173,7 +173,7 @@ MonoBehaviour:
   - {fileID: 2011964646}
   - {fileID: 1112760599}
   - {fileID: 1305804223}
-  _artistList: {fileID: 11400000, guid: c2a225de6e078f9428d3b6de56b6d452, type: 2}
+  _artistList: {fileID: 11400000, guid: a877589241dc3d44a8314467a839b574, type: 2}
   _artist: {fileID: 2106955641}
 --- !u!95 &255504389 stripped
 Animator:

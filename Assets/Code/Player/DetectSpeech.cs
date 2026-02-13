@@ -42,6 +42,12 @@ public class DetectSpeech : MonoBehaviour
         _appDictationExperience.Activate();
     }
 
+    public void StopListening()
+    {
+        StopAllCoroutines();
+        _appDictationExperience.Deactivate();
+    }
+
     private void OnTranscriptionComplete(string transcription)
     {
         if (string.IsNullOrWhiteSpace(transcription))

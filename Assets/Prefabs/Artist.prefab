@@ -252,7 +252,7 @@ MonoBehaviour:
   providerAsset: {fileID: 11400000, guid: 3e7152f8cf3682445acc9cce730fabb6, type: 2}
   audioSource: {fileID: 8995421072862032827}
   preset: 1
-  text: I love Llamas. I think they are the most beautiful animals in the world.
+  text: I love Llamas.
   onClipReady:
     m_PersistentCalls:
       m_Calls: []
@@ -283,7 +283,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 12.22
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
