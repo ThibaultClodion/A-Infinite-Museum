@@ -65,6 +65,8 @@ public class Survey : MonoBehaviour
 
     private void AddLineToSurvey()
     {
+#if UNITY_EDITOR
+        // This code will only run in the Unity Editor, ensuring that we don't attempt to write files in a build where it might not be allowed or could cause issues.
         _actualSurveyLine += _wordToDescribeRoom + c_surveyColumnSeparator;
 
         foreach (string response in _likertResponses)
@@ -77,10 +79,14 @@ public class Survey : MonoBehaviour
 
         // Add the line to the file
         File.AppendAllText(c_surveyFolder + c_surveyFileName, _actualSurveyLine + "\n");
+#endif
     }
 
     private void CreateFileIfNecessary()
     {
+#if UNITY_EDITOR
+        // This code will only run in the Unity Editor, ensuring that we don't attempt to write files in a build where it might not be allowed or could cause issues.
+
         // Ensure the directory exists
         if (!Directory.Exists(c_surveyFolder))
         {
@@ -94,5 +100,6 @@ public class Survey : MonoBehaviour
         {
             File.WriteAllText(filePath, c_headerLine + "\n");
         }
+#endif
     }
 }

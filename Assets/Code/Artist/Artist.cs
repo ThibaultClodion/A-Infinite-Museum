@@ -1,7 +1,10 @@
 using UnityEngine;
 using Meta.XR.BuildingBlocks.AIBlocks;
+
+#if UNITY_EDITOR
 using Google.GenAI;
 using Google.GenAI.Types;
+#endif
 
 public class Artist : MonoBehaviour
 {
@@ -125,6 +128,8 @@ public class Artist : MonoBehaviour
             return;
         }
 
+#if UNITY_EDITOR
+        // Only use API calls in the editor
         string apiKey = UnityEditor.EditorPrefs.GetString(ArtistGeneratorEditor.c_apiKeyPrefKey, "");
 
         if (string.IsNullOrWhiteSpace(apiKey))
@@ -158,5 +163,6 @@ public class Artist : MonoBehaviour
         {
             Debug.Log($"Content to generate: {contentToGenerate}");
         }
+#endif
     }
 }

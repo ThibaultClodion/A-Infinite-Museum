@@ -1,7 +1,6 @@
 using Oculus.Interaction.Samples;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,11 +13,12 @@ public class ValidateSurvey : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _validationText;
     [SerializeField] private List<Toggle> _disableTooglesAfterSubmit;
     [SerializeField] private Animator _toogleAnimator;
-    [SerializeField] private AnimatorController _validateController;
+    [SerializeField] private RuntimeAnimatorController _validateController;
     [SerializeField] private AnimatorOverrideLayerWeigth _animatorOverrideLayerWeigth;
 
     public void SubmitSurvey()
     {
+        // No need to submit survey in the Meta Quest. This is only for testing purposes in the editor.
         if (_survey.SubmitSurvey())
         {
             _validationText.text = "Thank you for answering all questions !";

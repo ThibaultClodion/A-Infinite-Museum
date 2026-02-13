@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        _artistList.InitializeIndexes();
+        
         for (int i = 0; i < _rooms.Length; i++)
         {
             _rooms[i].OnEnterSurveyRoom.AddListener(EnterNextRoom);
