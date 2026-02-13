@@ -6,27 +6,27 @@ using UnityEngine.UI;
 
 public class HighlightSelectedButton : MonoBehaviour
 {
-    [Header("Colors")]
-    [SerializeField] private Color _defaultColor;
-    [SerializeField] private Color _selectedColor;
+    [Header("Animations")]
+    [SerializeField] private AnimatorController _greenAnimatorController;
+    [SerializeField] private AnimatorController _defaultAnimatorController;
 
     [Header("UI Elements")]
-    [SerializeField] private List<Image> _buttonsImage;
+    [SerializeField] private List<Animator> _buttonsAnimator;
     [SerializeField] private Animator _toogleAnimator;
     [SerializeField] private AnimatorController _validateController;
     [SerializeField] private AnimatorOverrideLayerWeigth _animatorOverrideLayerWeigth;
 
-    public void HighlightSelected(Image selectedButton)
+    public void HighlightSelected(Animator selectedAnimator)
     {
-        foreach (Image button in _buttonsImage)
+        foreach (Animator animator in _buttonsAnimator)
         {
-            if (button == selectedButton)
+            if (animator == selectedAnimator)
             {
-                button.color = _selectedColor;
+                animator.runtimeAnimatorController = _greenAnimatorController;
             }
             else
             {
-                button.color = _defaultColor;
+                animator.runtimeAnimatorController = _defaultAnimatorController;
             }
         }
 
