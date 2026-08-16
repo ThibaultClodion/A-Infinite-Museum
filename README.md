@@ -46,4 +46,4 @@ An immersive VR research and exploration project designed to investigate human p
 
 ## Links
 
-* **Portfolio Demo :** [A.Infinite Museum on Canva](https://portfolio-thibaultclodion.my.canva.site/portfolio/a-infinite-museum)
+* **Portfolio Demo :** [A.Infinite Museum Demo](https://portfolio-thibaultclodion.my.canva.site/portfolio/a-infinite-museum)
